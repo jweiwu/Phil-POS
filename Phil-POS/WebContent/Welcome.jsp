@@ -6,6 +6,6 @@
 </head>
  
 <body>
-    <h2>Hello, <s:property value="username" />...!</h2>
+    <h2>Hello, <s:property value="#session.account.getName()" />!</h2>
 </body>
 </html>

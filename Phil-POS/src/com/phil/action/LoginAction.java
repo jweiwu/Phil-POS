@@ -1,39 +1,43 @@
 package com.phil.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.phil.model.Account;
+import com.phil.service.AccountService;
 
-public class LoginAction  extends ActionSupport{
+public class LoginAction extends ActionSupport implements ModelDriven<Account> {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String username;
-    private String password;
- 
-    public String execute() {
- 
-        if (this.username.equals("admin")
-                && this.password.equals("admin123")) {
-            return SUCCESS;
-        } else {
-            addActionError("Fail to login!");
-            return ERROR;
-        }
-    }
- 
-    public String getUsername() {
-        return username;
-    }
- 
-    public void setUsername(String username) {
-        this.username = username;
-    }
- 
-    public String getPassword() {
-        return password;
-    }
- 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	private Account account = new Account();
+
+	public String execute() {
+		
+		AccountService accountService = new AccountService();
+		
+		try {
+			if (accountService.Login(account)) {
+				return SUCCESS;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		addActionError("Fail to login!");
+		return ERROR;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	@Override
+	public Account getModel() {
+		return account;
+	}
 }
