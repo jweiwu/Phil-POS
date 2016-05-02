@@ -15,7 +15,7 @@
 <div class="container">
 <h2>Login</h2>
 <s:actionerror />
-<s:form action="login" method="post">
+<s:form action="login" method="post" namespace="/">
     <div class="form-group">
         <label>Username: </label>
         <input class="form-control" type="text" name="username" size="20" />

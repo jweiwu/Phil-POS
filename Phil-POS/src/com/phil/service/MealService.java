@@ -3,18 +3,19 @@ package com.phil.service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.phil.dbc.DBconnection;
-import com.phil.model.Account;
+import com.phil.model.Meal;
+import com.phil.viewmodel.ShowMeal;
 
-public class AccountService {
+public class MealService {
 	private DBconnection dbc = null;
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 
-	public AccountService() {
+	public MealService() {
 		try {
 			dbc = new DBconnection();
 			conn = dbc.getConnection();
@@ -23,29 +24,25 @@ public class AccountService {
 		}
 	}
 
-	public boolean Login(Account account) throws Exception {
-		boolean bool = false;
-		String sql = "SELECT * FROM `account` WHERE `username` = ? AND `password` = ?";
-
+	public List<ShowMeal> showMeals() throws Exception {
+		List<ShowMeal> meals = new ArrayList<ShowMeal>();
+		String sql = "SELECT * FROM `meal` JOIN `head` USING (`hid`);";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, account.getUsername());
-			pstmt.setString(2, account.getPassword());
 			ResultSet rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				Account result = new Account();
-				result.setAid(rs.getInt("aid"));
-				result.setUsername(rs.getString("username"));
-				result.setPassword(rs.getString("password"));
-				result.setName(rs.getString("name"));
-				result.setAuthority(rs.getInt("authority"));
-				result.setCreatetime(rs.getString("createtime"));
-				Map<String, Object> httpSession = ActionContext.getContext().getSession();
-				httpSession.put("account", result);
-				bool = true;
+			while (rs.next()) {
+				ShowMeal showMeal = new ShowMeal();
+				showMeal.setMid(rs.getInt("mid"));
+				showMeal.setHid(rs.getInt("hid"));
+				showMeal.setHead(rs.getString("item"));
+				showMeal.setMeal(rs.getString("meal"));
+				showMeal.setPrice(rs.getInt("price"));
+				showMeal.setDiscount(rs.getFloat("discount"));
+				showMeal.setActive(rs.getInt("active"));
+				meals.add(showMeal);
 			}
-			rs.close();
 
 		} catch (Exception e) {
 			throw e;
@@ -57,7 +54,7 @@ public class AccountService {
 			}
 		}
 
-		return bool;
+		return meals;
 	}
 
 	private boolean closeConn() throws Exception {

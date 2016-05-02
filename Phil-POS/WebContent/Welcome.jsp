@@ -7,5 +7,9 @@
  
 <body>
     <h2>Hello, <s:property value="#session.account.getName()" />!</h2>
+    <ul>
+    	<li><a href="boss/heads">Show Heads</a></li>
+    	<li><a href="boss/heads">Show Meals</a></li>
+    </ul>
 </body>
 </html>

@@ -19,13 +19,16 @@ public class LoginAction extends ActionSupport implements ModelDriven<Account> {
 		try {
 			if (accountService.Login(account)) {
 				return SUCCESS;
+			} else {
+				addActionError("Fail to login!");
+				return ERROR;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			addActionError("Fail to login!");
+			return ERROR;
 		}
 		
-		addActionError("Fail to login!");
-		return ERROR;
 	}
 
 	public Account getAccount() {

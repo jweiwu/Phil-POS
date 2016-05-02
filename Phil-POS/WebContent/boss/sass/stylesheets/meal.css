@@ -1,0 +1,178 @@
+/* line 5, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/meal.scss */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 19, ../sass/meal.scss */
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 24, ../sass/meal.scss */
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+/* line 34, ../sass/meal.scss */
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+/* line 39, ../sass/meal.scss */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+/* line 49, ../sass/meal.scss */
+.popup .close:hover {
+  color: #06D85F;
+}
+
+/* line 52, ../sass/meal.scss */
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/* line 58, ../sass/meal.scss */
+.main-header,
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* line 64, ../sass/meal.scss */
+.main-header {
+  background: steelblue;
+  color: #FFF;
+  height: 68px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+/****Layout****/
+/* line 76, ../sass/meal.scss */
+.main-container {
+  height: 100vh;
+  background-color: #F2F2F2;
+}
+
+/* line 82, ../sass/meal.scss */
+.item-view {
+  overflow: scroll;
+  margin-top: 30px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+/* line 89, ../sass/meal.scss */
+.item-view .title {
+  padding: 10px 0 10px 0;
+  background-color: #1abc9c;
+}
+/* line 92, ../sass/meal.scss */
+.item-view .title h1 {
+  font-weight: 100;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 36px;
+  text-align: left;
+}
+/* line 100, ../sass/meal.scss */
+.item-view .button-box {
+  padding-top: 10px;
+  text-align: center;
+}
+/* line 104, ../sass/meal.scss */
+.item-view .table-box {
+  margin-top: 20px;
+}

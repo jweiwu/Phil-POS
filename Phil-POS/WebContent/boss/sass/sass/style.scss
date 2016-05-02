@@ -1,0 +1,208 @@
+@import "compass/reset";
+@import "compass/css3";
+
+
+/****nav****/
+
+body{
+	padding: 0;margin: 0;height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.menu-item{
+
+
+	margin:0 2.5% 0 2.5%;
+	width: 100%;
+	height: 100px;
+	font-size: 16px;
+	border-bottom: 2px solid #DCDCDC;
+	
+	position: relative;
+	
+	.row{
+		// padding-top: 30px;
+		input[type="number"]::-webkit-outer-spin-button,
+			input[type="number"]::-webkit-inner-spin-button {
+			    -webkit-appearance: none;
+			    margin: 0;
+			}
+			input[type="number"] {
+			    -moz-appearance: textfield;
+			    width: 30px;
+			    height: 25px;
+			}
+		 -webkit-box-sizing: border-box;
+    	 -moz-box-sizing: border-box;
+          box-sizing: border-box;		
+			 p{
+				padding-top: 63*0.5px;
+			}	
+			span{
+
+				&.icon{
+					padding-left: 15px;
+					color:#696969;
+					font-size: 24px;
+					cursor: pointer;
+				}
+				
+				padding-top: 55*0.5px;
+			
+			}
+		
+	}
+}  //End of menu-item
+
+
+/****account****/
+
+#acount{
+	position: relative;
+	width: 100%;
+	height: 200px;
+	background-color: #87CEFA;
+		
+	
+	.money{
+		margin-left: 100px;
+		p{	
+			
+			font-size: 40px;
+			display: inline;
+		}
+
+		input[type="text"]{
+			
+			width: 100px;
+			background-color: #87CEFA ;
+			border: none;
+			font-size: 40px;
+		} 
+	}
+	
+
+	.btn{
+		margin-top: 10px;
+		margin-left: 20px;
+		cursor: pointer;
+		font-size: 33px;
+		width: 200px;
+		height: 58px;
+		 
+	
+
+	}
+
+}
+//  end of account
+
+
+/****category****/
+
+.category{
+	overflow: scroll;
+	width: 100%;
+	height: 300px;
+	.item{
+		margin-top: 25px;
+		padding-left: 30px;
+		font-size: 18px;
+				
+
+	}
+
+}
+
+
+
+
+
+
+// 切版
+.test{
+	height: 75%;
+}
+.main-wrap{
+	width: 100%;
+	// display: flex;
+	height: 100vh;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.main-header,
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-header{
+	background: steelblue;
+	color: #FFF;
+	height: 68px;
+	padding: 10px;
+	justify-content: space-between;
+}
+
+.main-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  li a {
+    display: block;
+    padding: 5px 7px;
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+    
+    &:hover {
+      background: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+h1 {
+	margin: 10px;
+	font-size: 36px;
+	font-weight: 700;	
+}
+
+.clear{
+	clear: both;
+}
+
+.main-container{
+	width: 100%;
+	position: relative;
+	.left{
+		width: 45%;
+		height: 700px;
+	
+		position: absolute;
+	}
+	.right {
+		left: 45%;
+		width: 55%;
+		height: 700px;
+		background-color:#FFF;
+		position: absolute;
+	}
+}
+
+.order{
+	width: 100%;
+	height: 500px;
+	border-right:1px solid #DCDCDC;
+	overflow: scroll;
+	
+}
+
+
+
+
+
+

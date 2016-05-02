@@ -7,9 +7,21 @@
     <constant name="struts.devMode" value="false" />
  
     <package name="default" extends="struts-default" namespace="/">
-        <action name="login" class="com.phil.action.LoginAction">
+        <action name="login" class="com.phil.action.LoginAction" method="execute">
             <result name="success">Welcome.jsp</result>
             <result name="error">Login.jsp</result>
         </action>
+    </package>
+    
+    <package name="boss" extends="struts-default" namespace="/boss">
+    	<action name="heads" class="com.phil.action.HeadAction" method="execute">
+    		<result name="success">meal.jsp</result>
+    	</action>
+    	<action name="meals" class="com.phil.action.MealAction" method="execute">
+    		<result name="success">meal.jsp</result>
+    	</action>
+    	<action name="insertHead" class="com.phil.action.HeadAction" method="insert">
+    		<result type="redirect" name="success">/boss/heads</result>
+    	</action>
     </package>
 </struts>
