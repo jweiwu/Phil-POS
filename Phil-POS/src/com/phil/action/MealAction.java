@@ -14,7 +14,7 @@ public class MealAction extends ActionSupport implements ModelDriven<Meal> {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8737605395967987479L;
 	private Meal meal = new Meal();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 

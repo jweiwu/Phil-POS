@@ -68,9 +68,9 @@
 			<h2>請輸入類別名稱</h2>
 			<a href="#" class="close">&times;</a>
 			<div class="content">
-				<form action="insertHead" method="post" namespace="/boss">
+				<s:form action="insertHead" method="post" namespace="/boss">
 					<input type="text" name="item"> <input type="submit" value="確認">
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</div>

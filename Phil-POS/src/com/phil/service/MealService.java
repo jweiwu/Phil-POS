@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.phil.dbc.DBconnection;
-import com.phil.model.Meal;
 import com.phil.viewmodel.ShowMeal;
 
 public class MealService {

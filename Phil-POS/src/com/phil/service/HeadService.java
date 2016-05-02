@@ -85,6 +85,34 @@ public class HeadService {
 		return bool;
 	}
 	
+	public boolean deleteHead(Head head) throws Exception {
+		boolean bool = false;
+		String sql = "DELETE FROM `head` WHERE `hid` = ?;";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, head.getHid());
+			
+			if (pstmt.executeUpdate() > 0) {
+				bool = true;
+				System.out.println("Delete head successfully");
+			} else {
+				System.out.println("Delete head unsuccessfully");
+			}
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (closeConn()) {
+				System.out.println("Close connection successfully");
+			} else {
+				System.out.println("Something went wrong");
+			}
+		}
+		
+		return bool;
+	}
+	
 	private boolean closeConn() throws Exception {
 		if (pstmt != null) {
 			try {
