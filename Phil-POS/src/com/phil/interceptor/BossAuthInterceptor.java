@@ -10,7 +10,7 @@ import com.phil.model.Account;
 public class BossAuthInterceptor extends AbstractInterceptor {
 
 	/**
-	 * 
+	 * 此攔截器無作用但不刪除，作為範例
 	 */
 	private static final long serialVersionUID = 8847668120530901673L;
 
@@ -20,7 +20,6 @@ public class BossAuthInterceptor extends AbstractInterceptor {
 		Account account = (Account) session.get("account");
 
 		if (account == null || account.getAuthority() != 0) {
-//			Action.addActionError("Fail to login!");
 			return Action.ERROR;
 		} else {
 			return invocation.invoke();

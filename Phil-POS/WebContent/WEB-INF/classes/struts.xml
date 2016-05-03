@@ -14,13 +14,15 @@
     </package>
     
     <package name="boss" extends="struts-default" namespace="/boss">
+    <!-- 攔截器宣告範例 -->
+    <!-- 
     	<interceptors>
     		<interceptor name="BossAuth" class="com.phil.interceptor.BossAuthInterceptor"></interceptor>
     	</interceptors>
     	<default-interceptor-ref name="BossAuth" />
-    	
+    -->
     	<action name="heads" class="com.phil.action.HeadAction" method="execute">
-    		<result name="success">meal.jsp</result>
+    		<result name="success">head.jsp</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
     	<action name="meals" class="com.phil.action.MealAction" method="execute">
