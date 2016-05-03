@@ -6,10 +6,11 @@ import com.phil.model.Account;
 import com.phil.service.AccountService;
 
 public class LoginAction extends ActionSupport implements ModelDriven<Account> {
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2697163463968653523L;
 	private Account account = new Account();
 
 	public String execute() {

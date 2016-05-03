@@ -13,7 +13,7 @@ public class HeadAction extends ActionSupport implements ModelDriven<Head> {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 7156592067323697805L;
 	private Head head = new Head();
 	private List<Head> heads = new ArrayList<Head>();
 
@@ -36,6 +36,23 @@ public class HeadAction extends ActionSupport implements ModelDriven<Head> {
 		
 		try {
 			if (headService.insertHead(head)) {
+				return SUCCESS;
+			} else {
+				return ERROR;
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return ERROR;
+		}
+	}
+
+	public String delete() {
+		HeadService headService = new HeadService();
+		
+		try {
+			if (headService.deleteHead(head)) {
 				return SUCCESS;
 			} else {
 				return ERROR;
