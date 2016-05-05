@@ -1,4 +1,5 @@
-/* line 5, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+@charset "UTF-8";
+/* line 5, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,70 +21,59 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /****Nav****/
-/* line 7, ../sass/meal.scss */
+/* line 10, ../sass/meal.scss */
 nav {
   padding-right: 20px;
 }
 
-/* line 10, ../sass/meal.scss */
-.menu-title {
-  right: 80px;
-  position: fixed;
-  z-index: 100;
-  float: left;
-  top: 15.5px;
-  color: black;
-  font-size: 16px;
-}
-
-/* line 19, ../sass/meal.scss */
+/* line 13, ../sass/meal.scss */
 .menu-icon {
   letter-spacing: 2px;
-  right: 20px;
+  left: 20px;
   z-index: 20;
   width: 50px;
   height: 50px;
@@ -93,14 +83,14 @@ nav {
   transition: background 0.5s;
 }
 
-/* line 32, ../sass/meal.scss */
+/* line 26, ../sass/meal.scss */
 .menu-icon span, .menu-icon span:before, .menu-icon span:after {
+  background-color: #fff;
   float: left;
   cursor: pointer;
   border-radius: 1px;
   height: 3px;
   width: 30px;
-  background: black;
   position: absolute;
   left: 15%;
   top: 50%;
@@ -108,40 +98,42 @@ nav {
   content: '';
   transition: all 0.5s ease-in-out;
 }
-/* line 48, ../sass/meal.scss */
+/* line 41, ../sass/meal.scss */
 .menu-icon span:before {
+  background-color: #fff;
   left: 0;
   top: -10px;
 }
-/* line 52, ../sass/meal.scss */
+/* line 46, ../sass/meal.scss */
 .menu-icon span:after {
+  background-color: #fff;
   left: 0;
   top: 10px;
 }
 
-/* line 62, ../sass/meal.scss */
+/* line 54, ../sass/meal.scss */
 .active {
   background: #304453;
 }
-/* line 65, ../sass/meal.scss */
+/* line 57, ../sass/meal.scss */
 .active span {
   background-color: transparent;
 }
-/* line 68, ../sass/meal.scss */
+/* line 60, ../sass/meal.scss */
 .active span:before, .active span:after {
   top: 0;
 }
-/* line 72, ../sass/meal.scss */
+/* line 64, ../sass/meal.scss */
 .active span:before {
   transform: rotate(135deg);
 }
-/* line 75, ../sass/meal.scss */
+/* line 67, ../sass/meal.scss */
 .active span:after {
   transform: rotate(-135deg);
 }
 
 /*Overlay Menu*/
-/* line 83, ../sass/meal.scss */
+/* line 75, ../sass/meal.scss */
 .overlay-menu {
   background: rgba(48, 68, 83, 0.9);
   color: #ffffff;
@@ -159,24 +151,24 @@ nav {
   transition: all 0.5s;
 }
 
-/* line 100, ../sass/meal.scss */
+/* line 92, ../sass/meal.scss */
 .open {
   z-index: 5;
   opacity: 1;
   transform: translateY(0%);
 }
 
-/* line 107, ../sass/meal.scss */
+/* line 98, ../sass/meal.scss */
 .overlay-menu ul {
   font-size: 1.5rem;
 }
 
-/* line 110, ../sass/meal.scss */
+/* line 101, ../sass/meal.scss */
 .overlay-menu ul li {
   padding: 1rem;
 }
 
-/* line 150, ../sass/meal.scss */
+/* line 104, ../sass/meal.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -189,31 +181,43 @@ nav {
   opacity: 0;
 }
 
-/* line 161, ../sass/meal.scss */
+/* line 115, ../sass/meal.scss */
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
-/* line 166, ../sass/meal.scss */
+/****End of Nav****/
+/****Pop up****/
+/* line 122, ../sass/meal.scss */
 .popup {
+  opacity: 0.8;
   margin: 70px auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
   width: 30%;
+  height: 500px;
   position: relative;
   transition: all 5s ease-in-out;
 }
+/* line 133, ../sass/meal.scss */
+.popup h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #999;
+}
 
-/* line 176, ../sass/meal.scss */
+/* line 140, ../sass/meal.scss */
 .popup h2 {
+  font-size: 20px;
+  padding: 10px 0 10px 0;
   margin-top: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
 
-/* line 181, ../sass/meal.scss */
+/* line 149, ../sass/meal.scss */
 .popup .close {
   position: absolute;
   top: 20px;
@@ -225,25 +229,114 @@ nav {
   color: #333;
 }
 
-/* line 191, ../sass/meal.scss */
+/* line 159, ../sass/meal.scss */
 .popup .close:hover {
   color: #06D85F;
 }
 
-/* line 194, ../sass/meal.scss */
+/****表單輸入****/
+/* line 164, ../sass/meal.scss */
 .popup .content {
-  max-height: 30%;
-  overflow: auto;
+  text-align: center;
+  max-height: 100%;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+/* line 171, ../sass/meal.scss */
+.popup .content input[type='submit'] {
+  opacity: .8;
+  width: 100px;
+  border: 0 none;
+  border-radius: 24px;
+  padding: 12px 18px;
+  margin: 10px;
+  line-height: 1.3;
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 500;
+  background-color: #3ac569;
+}
+/* line 186, ../sass/meal.scss */
+.popup .content .group {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+/* line 192, ../sass/meal.scss */
+.popup .content .group .icon {
+  color: #1abc9c;
+  font-size: 25px;
+  position: absolute;
+  left: -40px;
+  top: 10px;
+}
+/* line 200, ../sass/meal.scss */
+.popup .content .group input[type='text'] {
+  padding: 10px 10px 10px 5px;
+  font-size: 18px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+/* line 208, ../sass/meal.scss */
+.popup .content .group input[type='text']:focus {
+  outline: none;
+}
+/* line 213, ../sass/meal.scss */
+.popup .content .group select {
+  width: 200px;
+  font-size: 18px;
+  height: 2.0rem;
+  padding: 10px 10px 10px 5px;
+  background: none;
+  border: none;
+  line-height: 1.6;
+  box-shadow: none;
+  color: #999;
+}
+/* line 223, ../sass/meal.scss */
+.popup .content .group select:focus {
+  outline: none;
+}
+/* line 228, ../sass/meal.scss */
+.popup .content .group label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 241, ../sass/meal.scss */
+.popup .content .group input:focus ~ label, .popup .content .group input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
+/* line 246, ../sass/meal.scss */
+.popup .content .group .bars {
+  position: relative;
+  background-color: #757575;
+  display: block;
+  width: 200px;
+  height: 1px;
 }
 
-/* line 200, ../sass/meal.scss */
+/****End of Pop up****/
+/* line 263, ../sass/meal.scss */
 .main-header,
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/* line 206, ../sass/meal.scss */
+/* line 268, ../sass/meal.scss */
 .main-header {
   background: steelblue;
   color: #FFF;
@@ -253,13 +346,13 @@ nav {
 }
 
 /****Layout****/
-/* line 218, ../sass/meal.scss */
+/* line 276, ../sass/meal.scss */
 .main-container {
   height: 100vh;
   background-color: #F2F2F2;
 }
 
-/* line 224, ../sass/meal.scss */
+/* line 280, ../sass/meal.scss */
 .item-view {
   overflow: scroll;
   margin-top: 30px;
@@ -267,12 +360,12 @@ nav {
   background-color: white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-/* line 231, ../sass/meal.scss */
+/* line 287, ../sass/meal.scss */
 .item-view .title {
   padding: 10px 0 10px 0;
   background-color: #1abc9c;
 }
-/* line 234, ../sass/meal.scss */
+/* line 290, ../sass/meal.scss */
 .item-view .title h1 {
   font-weight: 100;
   padding-left: 20px;
@@ -280,12 +373,20 @@ nav {
   font-size: 36px;
   text-align: left;
 }
-/* line 242, ../sass/meal.scss */
+/* line 298, ../sass/meal.scss */
 .item-view .button-box {
   padding-top: 10px;
-  text-align: center;
+  margin-left: 20px;
+  text-align: left;
 }
-/* line 246, ../sass/meal.scss */
+/* line 303, ../sass/meal.scss */
 .item-view .table-box {
   margin-top: 20px;
+}
+/* line 306, ../sass/meal.scss */
+.item-view .table-box .table-wrap {
+  padding: 5px 0 5px 0;
+  border: 1px solid;
+  width: 95%;
+  margin: 0 auto;
 }

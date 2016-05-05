@@ -14,22 +14,9 @@
 	<body>
 
 <!-- Navbar -->
-		<section class="overlay-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3"></div>
-					<div class="col-lg-6">
-						
-						<ul>
-						
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="main-container">
-			<header class="main-header">
-				<nav>
+<div class="main-container">
+	<header class="main-header">
+		<nav>
 			<div class="navbar-brand"><a href="" class="logo-title"></a></div>
 			
 			<div class="menu">
@@ -39,20 +26,23 @@
 				</div>
 			</div>
 		</nav>	
+	</header>
+
 <!-- End of Navbar-->
 
 
+
 <!-- main content -->
-		</header>
+	
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
 				<div class="item-view">
-					<div class="title"><h1>餐點類別</h1></div>
+					<div class="title"><h1>餐點</h1></div>
 					<form action="">
 					<div class="button-box">
-						<a href="#popup1" class="button btn btn-success">新增類別</a>
+						<a href="#popup1" class="button btn btn-success">新增</a>
 					</div>	
 					<!-- 類別輸出表 -->
 					<div class="table-box">
@@ -61,16 +51,18 @@
 							    <thead>
 							        <tr>
 							            <th>刪除</th>
-							            <th>類別名稱</th>
+							            <th>餐點名稱</th>
+							            <th>餐點類別</th>
 							        </tr>
 							    </thead>
 							    <tbody>
-							        <s:iterator value="heads">
+							      		
 							        <tr>
-							        	<td><a href="deleteHead?hid=<s:property value="hid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
-							        	<td><s:property value="item" /></td>
+							        	<td><span class="glyphicon glyphicon-trash"></span></td>
+							        	<td>雞排堡</td>
+							        	<td>漢堡</td>
 							        </tr>
-							        </s:iterator>
+							        
 							    </tbody>
 							</table>
 						</div>
@@ -85,15 +77,40 @@
 
 		<!-- 類別輸入欄 -->
 		<div id="popup1" class="overlay">
-				<div class="popup">
-					<h2>請輸入類別名稱</h2>
-					<a href="#" class="close">&times;</a>
-					<div class="content">
-						<s:form action="insertHead" method="post" namespace="/boss">
-						<input type="text" name="item">
-						<input type="submit" value="確認">
-						</s:form>
-					</div>
+			<div class="popup">
+				<h1>餐點輸入</h1>
+				<a href="#" class="close">&times;</a>
+			
+				<div class="content">
+					<s:form action="" method="post" namespace="/boss">
+						<div class="group">
+							<span class="icon glyphicon glyphicon-tag"></span>	
+							<input type="text" name="item" required>	
+							<span class="highlight"></span>
+	      					<span class="bar"></span>
+	      					<label>Menu name</label>
+      					</div>
+							
+							<div class="group">
+							<span class="icon glyphicon glyphicon-usd"></span>	
+							<input type="text" name="item" required>
+							<span class="highlight"></span>
+	      					<span class="bar"></span>
+	      					<label>Price</label>
+      					</div>
+						<div class="group">
+							<span class="icon glyphicon glyphicon-cog"></span>	
+							<select name="YourLocation" placeholder="餐點類別選擇">
+								　<option value="burger">漢堡</option>
+								　<option value="drink">飲料</option>
+								　<option value="coffee">咖啡</option>	
+							</select>
+							<span class="highlight"></span>
+	      					<span class="bars"></span>
+						</div>
+						<input type="submit" value="確認" class="button green cnter">
+					</s:form>
+				</div>
 			</div>
 		</div>
 		<!-- End of 類別輸入欄 -->

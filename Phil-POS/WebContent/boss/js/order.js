@@ -7,12 +7,14 @@ var data = {
 var source =    $("#order-template").html(); 
 var template = Handlebars.compile(source);
 
+
+
+
 $('button').click(order);
 function order(){
  var html = template(data);
  $(".list").append(html);
 };
-
 
 
 

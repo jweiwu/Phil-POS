@@ -1,7 +1,8 @@
+
+
+
 $(document).ready( function () {
     $('#table_id').DataTable();
-
-
 //刪除類別
     $('td').on('click','span',function(){
     	var x = this.parentElement;
@@ -15,6 +16,8 @@ $(document).ready( function () {
   		$(this).toggleClass("active");
   		$(".overlay-menu").toggleClass("open");
     });
+
+    
 
 });
 
