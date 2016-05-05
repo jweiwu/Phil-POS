@@ -18,9 +18,8 @@ public class HeadAction extends ActionSupport implements ModelDriven<Head> {
 	private List<Head> heads = new ArrayList<Head>();
 
 	public String execute() {
-		HeadService headService = new HeadService();
-		
 		try {
+			HeadService headService = new HeadService();
 			setHeads(headService.showHeads());
 			return SUCCESS;
 		} catch (Exception e) {
@@ -32,9 +31,8 @@ public class HeadAction extends ActionSupport implements ModelDriven<Head> {
 	}
 	
 	public String insert() {
-		HeadService headService = new HeadService();
-		
 		try {
+			HeadService headService = new HeadService();
 			if (headService.insertHead(head)) {
 				return SUCCESS;
 			} else {
@@ -49,9 +47,8 @@ public class HeadAction extends ActionSupport implements ModelDriven<Head> {
 	}
 
 	public String delete() {
-		HeadService headService = new HeadService();
-		
 		try {
+			HeadService headService = new HeadService();
 			if (headService.deleteHead(head)) {
 				return SUCCESS;
 			} else {

@@ -25,16 +25,24 @@
     		<result name="success">head.jsp</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
-    	<action name="meals" class="com.phil.action.MealAction" method="execute">
-    		<result name="success">meal.jsp</result>
-    		<result type="redirect" name="error">/login</result>
-    	</action>
     	<action name="insertHead" class="com.phil.action.HeadAction" method="insert">
     		<result type="redirect" name="success">/boss/heads</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
     	<action name="deleteHead" class="com.phil.action.HeadAction" method="delete">
     		<result type="redirect" name="success">/boss/heads</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
+    	<action name="meals" class="com.phil.action.MealAction" method="execute">
+    		<result name="success">item.jsp</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
+    	<action name="insertMeal" class="com.phil.action.MealAction" method="insert">
+    		<result type="redirect" name="success">/boss/meals</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
+    	<action name="deleteMeal" class="com.phil.action.MealAction" method="delete">
+    		<result type="redirect" name="success">/boss/meals</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
     </package>

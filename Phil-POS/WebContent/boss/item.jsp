@@ -1,6 +1,6 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%> -->
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -52,16 +52,21 @@
 							        <tr>
 							            <th>刪除</th>
 							            <th>餐點名稱</th>
+							            <th>餐點價格</th>
+							            <th>餐點折扣</th>
 							            <th>餐點類別</th>
 							        </tr>
 							    </thead>
 							    <tbody>
-							      		
-							        <tr>
-							        	<td><span class="glyphicon glyphicon-trash"></span></td>
-							        	<td>雞排堡</td>
-							        	<td>漢堡</td>
+							      	<s:iterator value="meals">
+							      	<tr>
+							        	<td><a href="deleteMeal?mid=<s:property value="mid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
+							        	<td><s:property value="meal" /></td>
+							        	<td><s:property value="price" /></td>
+							        	<td><s:property value="discount" /></td>
+							        	<td><s:property value="head" /></td>
 							        </tr>
+							      	</s:iterator>
 							        
 							    </tbody>
 							</table>
@@ -82,28 +87,38 @@
 				<a href="#" class="close">&times;</a>
 			
 				<div class="content">
-					<s:form action="" method="post" namespace="/boss">
+					<s:form action="insertMeal" method="post" namespace="/boss">
 						<div class="group">
 							<span class="icon glyphicon glyphicon-tag"></span>	
-							<input type="text" name="item" required>	
+							<input type="text" name="meal" required>	
 							<span class="highlight"></span>
 	      					<span class="bar"></span>
 	      					<label>Menu name</label>
       					</div>
 							
-							<div class="group">
+						<div class="group">
 							<span class="icon glyphicon glyphicon-usd"></span>	
-							<input type="text" name="item" required>
+							<input type="text" name="price" required>
 							<span class="highlight"></span>
 	      					<span class="bar"></span>
 	      					<label>Price</label>
       					</div>
+      					<!-- 
+						<div class="group">
+							<span class="icon glyphicon glyphicon-usd"></span>	
+							<input type="text" name="discount" step="0.05" max="1" min="0.1" value="1" required>
+							<span class="highlight"></span>
+	      					<span class="bar"></span>
+	      					<label>Discount</label>
+      					</div>
+      					 -->
 						<div class="group">
 							<span class="icon glyphicon glyphicon-cog"></span>	
-							<select name="YourLocation" placeholder="餐點類別選擇">
-								　<option value="burger">漢堡</option>
-								　<option value="drink">飲料</option>
-								　<option value="coffee">咖啡</option>	
+							<!-- <select name="YourLocation" placeholder="餐點類別選擇"> -->
+							<select name="hid">
+								<s:iterator value="heads">　
+								<option value="<s:property value="hid" />"><s:property value="item" /></option>
+								</s:iterator>
 							</select>
 							<span class="highlight"></span>
 	      					<span class="bars"></span>

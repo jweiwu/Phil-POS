@@ -3,10 +3,13 @@ package com.phil.service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.phil.dbc.DBconnection;
+import com.phil.model.Meal;
 import com.phil.viewmodel.ShowMeal;
 
 public class MealService {
@@ -54,6 +57,67 @@ public class MealService {
 		}
 
 		return meals;
+	}
+	
+	public boolean insertMeals(Meal meal) throws Exception {
+		boolean bool = false;
+		String sql = "INSERT INTO `meal` (`hid`, `meal`, `price`, `createtime`) VALUES(?, ?, ?, ?);";
+		
+		try {
+			Date now = new Date();
+			SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, meal.getHid());
+			pstmt.setString(2, meal.getMeal());
+			pstmt.setInt(3, meal.getPrice());
+			pstmt.setString(4, sdFormat.format(now));
+			
+			if (pstmt.executeUpdate() > 0) {
+				bool = true;
+				System.out.println("Insert meal successfully");
+			} else {
+				System.out.println("Insert meal unsuccessfully");
+			}
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (closeConn()) {
+				System.out.println("Close connection successfully");
+			} else {
+				System.out.println("Something went wrong");
+			}
+		}
+		
+		return bool;
+	}
+
+	public boolean deleteMeal(Meal meal) throws Exception {
+		boolean bool = false;
+		String sql = "DELETE FROM `meal` WHERE `mid` = ?;";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, meal.getMid());
+			
+			if (pstmt.executeUpdate() > 0) {
+				bool = true;
+				System.out.println("Delete meal successfully");
+			} else {
+				System.out.println("Delete meal unsuccessfully");
+			}
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (closeConn()) {
+				System.out.println("Close connection successfully");
+			} else {
+				System.out.println("Something went wrong");
+			}
+		}
+		
+		return bool;
 	}
 
 	private boolean closeConn() throws Exception {
