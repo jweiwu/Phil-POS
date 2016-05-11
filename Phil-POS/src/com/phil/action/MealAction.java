@@ -59,7 +59,7 @@ public class MealAction extends ActionSupport implements ModelDriven<Meal>, Prep
 		MealService mealService = new MealService(dbc.getConnection());
 		
 		try {
-			if (mealService.insertMeals(meal))  {
+			if (mealService.insertMeal(meal))  {
 				return SUCCESS;
 			} else {
 				return ERROR;

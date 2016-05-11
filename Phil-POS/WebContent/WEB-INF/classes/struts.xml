@@ -47,5 +47,17 @@
     		<result type="redirect" name="success">/boss/meals</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
+    	<action name="customs" class="com.phil.action.CustomAction" method="execute">
+    		<result name="success">custom.jsp</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
+    	<action name="insertCustom" class="com.phil.action.CustomAction" method="insert">
+    		<result type="redirect" name="success">/boss/customs</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
+    	<action name="deleteCustom" class="com.phil.action.CustomAction" method="delete">
+    		<result type="redirect" name="success">/boss/customs</result>
+    		<result type="redirect" name="error">/login</result>
+    	</action>
     </package>
 </struts>

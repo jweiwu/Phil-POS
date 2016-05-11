@@ -46,7 +46,7 @@ public class MealService {
 		return meals;
 	}
 	
-	public boolean insertMeals(Meal meal) throws Exception {
+	public boolean insertMeal(Meal meal) throws Exception {
 		boolean bool = false;
 		String sql = "INSERT INTO `meal` (`hid`, `meal`, `price`, `createtime`) VALUES(?, ?, ?, ?);";
 		
