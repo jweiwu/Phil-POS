@@ -40,7 +40,9 @@ public class DBconnection {
 		if (conn != null) {
 			try {
 				conn.close();
+				System.out.println("Close database connection successfully");
 			} catch (Exception e) {
+				System.out.println("Someting went wrong when closing database connection");
 				throw e;
 			}
 		}

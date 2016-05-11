@@ -8,6 +8,8 @@
  
     <package name="default" extends="struts-default" namespace="/">
         <action name="login" class="com.phil.action.LoginAction" method="execute">
+            <interceptor-ref name="modelDriven"/>
+            <interceptor-ref name="basicStack"/>
             <result name="success">Welcome.jsp</result>
             <result name="error">Login.jsp</result>
         </action>

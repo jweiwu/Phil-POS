@@ -5,38 +5,60 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
+import com.phil.dbc.DBconnection;
 import com.phil.model.Head;
 import com.phil.model.Meal;
 import com.phil.service.HeadService;
 import com.phil.service.MealService;
 import com.phil.viewmodel.ShowMeal;
 
-public class MealAction extends ActionSupport implements ModelDriven<Meal> {
+public class MealAction extends ActionSupport implements ModelDriven<Meal>, Preparable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8737605395967987479L;
+	private DBconnection dbc = null;
 	private Meal meal = new Meal();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
+	
+	@Override
+	public void prepare() {
+		try {
+			dbc = new DBconnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public String execute() {
+		MealService mealService = new MealService(dbc.getConnection());
+		HeadService headService = new HeadService(dbc.getConnection());
+		
 		try {
-			MealService mealService = new MealService();
-			HeadService headService = new HeadService();
 			setMeals(mealService.showMeals());
 			setHeads(headService.showHeads());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
+		} finally {
+			try {
+				mealService.closeConn();
+				headService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return SUCCESS;
 	}
 	
 	public String insert() {
+		MealService mealService = new MealService(dbc.getConnection());
+		
 		try {
-			MealService mealService = new MealService();
 			if (mealService.insertMeals(meal))  {
 				return SUCCESS;
 			} else {
@@ -45,12 +67,20 @@ public class MealAction extends ActionSupport implements ModelDriven<Meal> {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
+		} finally {
+			try {
+				mealService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public String delete() {
+		MealService mealService = new MealService(dbc.getConnection());
+		
 		try {
-			MealService mealService = new MealService();
 			if (mealService.deleteMeal(meal)) {
 				return SUCCESS;
 			} else {
@@ -59,6 +89,13 @@ public class MealAction extends ActionSupport implements ModelDriven<Meal> {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
+		}finally {
+			try {
+				mealService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

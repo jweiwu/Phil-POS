@@ -6,21 +6,14 @@ import java.sql.ResultSet;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.phil.dbc.DBconnection;
 import com.phil.model.Account;
 
 public class AccountService {
-	private DBconnection dbc = null;
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 
-	public AccountService() {
-		try {
-			dbc = new DBconnection();
-			conn = dbc.getConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public AccountService(Connection conn) {
+		this.conn = conn;
 	}
 
 	public boolean Login(Account account) throws Exception {
@@ -49,29 +42,21 @@ public class AccountService {
 
 		} catch (Exception e) {
 			throw e;
-		} finally {
-			if (closeConn()) {
-				System.out.println("Close connection successfully");
-			} else {
-				System.out.println("Something went wrong");
-			}
 		}
 
 		return bool;
 	}
 
-	private boolean closeConn() throws Exception {
-		if (pstmt != null) {
-			try {
+	public void closeConn() throws Exception {
+		try {
+			if (pstmt != null)
 				pstmt.close();
+			if (conn != null)
 				conn.close();
-				dbc.close();
-				return true;
-			} catch (Exception e) {
-				throw e;
-			}
-		} else {
-			return false;
+			System.out.println("Close connection successfully");
+		} catch (Exception e) {
+			System.out.println("Something went wrong when closing connection");
+			throw e;
 		}
 	}
 

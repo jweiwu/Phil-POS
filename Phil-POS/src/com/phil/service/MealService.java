@@ -8,22 +8,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.phil.dbc.DBconnection;
 import com.phil.model.Meal;
 import com.phil.viewmodel.ShowMeal;
 
 public class MealService {
-	private DBconnection dbc = null;
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 
-	public MealService() {
-		try {
-			dbc = new DBconnection();
-			conn = dbc.getConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public MealService(Connection conn) {
+		this.conn = conn;
 	}
 
 	public List<ShowMeal> showMeals() throws Exception {
@@ -48,12 +41,6 @@ public class MealService {
 
 		} catch (Exception e) {
 			throw e;
-		} finally {
-			if (closeConn()) {
-				System.out.println("Close connection successfully");
-			} else {
-				System.out.println("Something went wrong");
-			}
 		}
 
 		return meals;
@@ -81,12 +68,6 @@ public class MealService {
 			
 		} catch (Exception e) {
 			throw e;
-		} finally {
-			if (closeConn()) {
-				System.out.println("Close connection successfully");
-			} else {
-				System.out.println("Something went wrong");
-			}
 		}
 		
 		return bool;
@@ -109,29 +90,21 @@ public class MealService {
 			
 		} catch (Exception e) {
 			throw e;
-		} finally {
-			if (closeConn()) {
-				System.out.println("Close connection successfully");
-			} else {
-				System.out.println("Something went wrong");
-			}
 		}
 		
 		return bool;
 	}
 
-	private boolean closeConn() throws Exception {
-		if (pstmt != null) {
-			try {
+	public void closeConn() throws Exception {
+		try {
+			if (pstmt != null)
 				pstmt.close();
+			if (conn != null)
 				conn.close();
-				dbc.close();
-				return true;
-			} catch (Exception e) {
-				throw e;
-			}
-		} else {
-			return false;
+			System.out.println("Close connection successfully");
+		} catch (Exception e) {
+			System.out.println("Something went wrong when closing connection");
+			throw e;
 		}
 	}
 
