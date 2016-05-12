@@ -48,7 +48,7 @@
     		<result type="redirect" name="error">/login</result>
     	</action>
     	<action name="customs" class="com.phil.action.CustomAction" method="execute">
-    		<result name="success">custom.jsp</result>
+    		<result name="success">special.jsp</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
     	<action name="insertCustom" class="com.phil.action.CustomAction" method="insert">

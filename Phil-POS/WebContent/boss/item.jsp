@@ -1,11 +1,11 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%> -->
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Head</title>
+		<title>Meal Management - Phil POS</title>
 			
 		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="sass/stylesheets/meal.css">
@@ -57,20 +57,18 @@
 							    <thead>
 							        <tr>
 							            <th>刪除</th>
+							            <th>餐點類別</th>
 							            <th>餐點名稱</th>
 							            <th>餐點價格</th>
-							            <th>餐點折扣</th>
-							            <th>餐點類別</th>
 							        </tr>
 							    </thead>
 							    <tbody>
 							      	<s:iterator value="meals">
 							      	<tr>
 							        	<td><a href="deleteMeal?mid=<s:property value="mid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
+							        	<td><s:property value="head" /></td>
 							        	<td><s:property value="meal" /></td>
 							        	<td><s:property value="price" /></td>
-							        	<td><s:property value="discount" /></td>
-							        	<td><s:property value="head" /></td>
 							        </tr>
 							      	</s:iterator>
 							        

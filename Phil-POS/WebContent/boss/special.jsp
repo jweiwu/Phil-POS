@@ -1,11 +1,11 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%> -->
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Special</title>
+		<title>Custom Management - Phil POS</title>
 			
 		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="sass/stylesheets/meal.css">
@@ -63,25 +63,13 @@
 							        </tr>
 							    </thead>
 							    <tbody>
-							      	
+							      	<s:iterator value="customs">
 							      	<tr>
-							      		 <td><a href="deleteMeal?mid=<s:property value="mid" />"><span class="glyphicon glyphicon-trash"></span></a></td>	
-							        	 <td>加肉</td>
-							        	 <td>20元</td>
-							    
+							        	<td><a href="deleteCustom?cid=<s:property value="cid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
+							        	<td><s:property value="item" /></td>
+							        	<td><s:property value="price" /></td>
 							        </tr>
-							      	<tr>
-							      		<td><a href="deleteMeal?mid=<s:property value="mid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
-							        	 <td>不加生菜</td>
-							        	 <td>0元</td>
-							        </tr>
-							      	<tr>
-							      		<td><a href="deleteMeal?mid=<s:property value="mid" />"><span class="glyphicon glyphicon-trash"></span></a></td>
-							        	 <td>加醬</td>
-							        	 <td>5元</td>
-							        </tr>
-							      
-							        
+							      	</s:iterator>
 							    </tbody>
 							</table>
 						</div>
@@ -101,13 +89,13 @@
 				<a href="#" class="close">&times;</a>
 			
 				<div class="content">
-					<s:form action="" method="post" namespace="/boss">
+					<s:form action="insertCustom" method="post" namespace="/boss">
 						<div class="group">
 							<span class="icon glyphicon glyphicon-tag"></span>	
-							<input type="text" name="meal" required>	
+							<input type="text" name="item" required>	
 							<span class="highlight"></span>
 	      					<span class="bar"></span>
-	      					<label>Special name</label>
+	      					<label>Name</label>
       					</div>
 							
 						<div class="group">

@@ -10,6 +10,7 @@
     <ul>
     	<li><a href="boss/heads">Show Heads</a></li>
     	<li><a href="boss/meals">Show Meals</a></li>
+    	<li><a href="boss/customs">Show Customs</a></li>
     </ul>
 </body>
 </html>

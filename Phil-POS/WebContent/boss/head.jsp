@@ -5,7 +5,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Head</title>
+		<title>Head Management - Phil POS</title>
 			
 		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="sass/stylesheets/meal.css">
