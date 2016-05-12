@@ -64,76 +64,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/****Nav****/
-/* line 10, ../sass/meal.scss */
-nav {
-  padding-right: 20px;
-}
-
-/* line 13, ../sass/meal.scss */
-.menu-icon {
-  letter-spacing: 2px;
-  left: 20px;
-  z-index: 20;
-  width: 50px;
-  height: 50px;
-  margin: 0 0 0 auto;
-  position: fixed;
-  cursor: pointer;
-  transition: background 0.5s;
-}
-
-/* line 26, ../sass/meal.scss */
-.menu-icon span, .menu-icon span:before, .menu-icon span:after {
-  background-color: #fff;
-  float: left;
-  cursor: pointer;
-  border-radius: 1px;
-  height: 3px;
-  width: 30px;
-  position: absolute;
-  left: 15%;
-  top: 50%;
-  display: block;
-  content: '';
-  transition: all 0.5s ease-in-out;
-}
-/* line 41, ../sass/meal.scss */
-.menu-icon span:before {
-  background-color: #fff;
-  left: 0;
-  top: -10px;
-}
-/* line 46, ../sass/meal.scss */
-.menu-icon span:after {
-  background-color: #fff;
-  left: 0;
-  top: 10px;
-}
-
-/* line 54, ../sass/meal.scss */
-.active {
-  background: #304453;
-}
-/* line 57, ../sass/meal.scss */
-.active span {
-  background-color: transparent;
-}
-/* line 60, ../sass/meal.scss */
-.active span:before, .active span:after {
-  top: 0;
-}
-/* line 64, ../sass/meal.scss */
-.active span:before {
-  transform: rotate(135deg);
-}
-/* line 67, ../sass/meal.scss */
-.active span:after {
-  transform: rotate(-135deg);
+/* line 14, ../sass/meal.scss */
+body {
+  magin: 0;
+  padding: 0;
 }
 
 /*Overlay Menu*/
-/* line 75, ../sass/meal.scss */
+/* line 46, ../sass/meal.scss */
 .overlay-menu {
   background: rgba(48, 68, 83, 0.9);
   color: #ffffff;
@@ -151,24 +89,24 @@ nav {
   transition: all 0.5s;
 }
 
-/* line 92, ../sass/meal.scss */
+/* line 63, ../sass/meal.scss */
 .open {
   z-index: 5;
   opacity: 1;
   transform: translateY(0%);
 }
 
-/* line 98, ../sass/meal.scss */
+/* line 69, ../sass/meal.scss */
 .overlay-menu ul {
   font-size: 1.5rem;
 }
 
-/* line 101, ../sass/meal.scss */
+/* line 72, ../sass/meal.scss */
 .overlay-menu ul li {
   padding: 1rem;
 }
 
-/* line 104, ../sass/meal.scss */
+/* line 75, ../sass/meal.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -181,15 +119,120 @@ nav {
   opacity: 0;
 }
 
-/* line 115, ../sass/meal.scss */
+/* line 86, ../sass/meal.scss */
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
+/****Nav****/
+/* line 92, ../sass/meal.scss */
+span.bars {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+/* line 101, ../sass/meal.scss */
+#togg_menu {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+/* line 108, ../sass/meal.scss */
+#togg_menu:focus ~ .megaMenu {
+  transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+}
+
+/* line 113, ../sass/meal.scss */
+header {
+  width: 100%;
+  height: 60px;
+}
+/* line 118, ../sass/meal.scss */
+header .megaMenu {
+  transform: translateX(-270px);
+  -ms-transform: translateX(-270px);
+  -o-transform: translateX(-270px);
+  -webkit-transform: translateX(-270px);
+  -moz-transform: translateX(-270px);
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  background-color: #231f20;
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  padding-top: 50px;
+  z-index: 100;
+  border-radius: 2px solid #ddd;
+}
+/* line 135, ../sass/meal.scss */
+header .megaMenu ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 142, ../sass/meal.scss */
+header .megaMenu li {
+  display: block;
+  padding: 15px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #594f51;
+}
+/* line 143, ../sass/meal.scss */
+header .megaMenu li.title {
+  border-top: none;
+}
+/* line 145, ../sass/meal.scss */
+header .megaMenu li.title h1 {
+  font-weight: 100;
+  font-family: Helvetica, sans-serif;
+  color: #FFF;
+  font-size: 30px;
+}
+/* line 158, ../sass/meal.scss */
+header .megaMenu li a {
+  color: #594f51;
+  padding: 15px 0;
+  width: 90%;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+}
+/* line 166, ../sass/meal.scss */
+header .megaMenu li a:hover {
+  color: #51e980;
+}
+/* line 170, ../sass/meal.scss */
+header .megaMenu li:hover {
+  border-ledt: 5px solid #51e980;
+}
+
 /****End of Nav****/
 /****Pop up****/
-/* line 122, ../sass/meal.scss */
+/* line 186, ../sass/meal.scss */
 .popup {
   opacity: 0.8;
   margin: 70px auto;
@@ -201,14 +244,14 @@ nav {
   position: relative;
   transition: all 5s ease-in-out;
 }
-/* line 133, ../sass/meal.scss */
+/* line 197, ../sass/meal.scss */
 .popup h1 {
   text-align: center;
   font-size: 28px;
   color: #999;
 }
 
-/* line 140, ../sass/meal.scss */
+/* line 204, ../sass/meal.scss */
 .popup h2 {
   font-size: 20px;
   padding: 10px 0 10px 0;
@@ -217,7 +260,7 @@ nav {
   font-family: Tahoma, Arial, sans-serif;
 }
 
-/* line 149, ../sass/meal.scss */
+/* line 213, ../sass/meal.scss */
 .popup .close {
   position: absolute;
   top: 20px;
@@ -229,13 +272,13 @@ nav {
   color: #333;
 }
 
-/* line 159, ../sass/meal.scss */
+/* line 223, ../sass/meal.scss */
 .popup .close:hover {
   color: #06D85F;
 }
 
 /****表單輸入****/
-/* line 164, ../sass/meal.scss */
+/* line 228, ../sass/meal.scss */
 .popup .content {
   text-align: center;
   max-height: 100%;
@@ -243,7 +286,7 @@ nav {
   margin: 0 auto;
   padding-top: 15px;
 }
-/* line 171, ../sass/meal.scss */
+/* line 235, ../sass/meal.scss */
 .popup .content input[type='submit'] {
   opacity: .8;
   width: 100px;
@@ -257,13 +300,13 @@ nav {
   font-weight: 500;
   background-color: #3ac569;
 }
-/* line 186, ../sass/meal.scss */
+/* line 250, ../sass/meal.scss */
 .popup .content .group {
   position: relative;
   margin-top: 20px;
   margin-bottom: 45px;
 }
-/* line 192, ../sass/meal.scss */
+/* line 256, ../sass/meal.scss */
 .popup .content .group .icon {
   color: #1abc9c;
   font-size: 25px;
@@ -271,7 +314,7 @@ nav {
   left: -40px;
   top: 10px;
 }
-/* line 200, ../sass/meal.scss */
+/* line 264, ../sass/meal.scss */
 .popup .content .group input[type='text'] {
   padding: 10px 10px 10px 5px;
   font-size: 18px;
@@ -280,11 +323,11 @@ nav {
   border: none;
   border-bottom: 1px solid #757575;
 }
-/* line 208, ../sass/meal.scss */
+/* line 272, ../sass/meal.scss */
 .popup .content .group input[type='text']:focus {
   outline: none;
 }
-/* line 213, ../sass/meal.scss */
+/* line 277, ../sass/meal.scss */
 .popup .content .group select {
   width: 200px;
   font-size: 18px;
@@ -296,11 +339,11 @@ nav {
   box-shadow: none;
   color: #999;
 }
-/* line 223, ../sass/meal.scss */
+/* line 287, ../sass/meal.scss */
 .popup .content .group select:focus {
   outline: none;
 }
-/* line 228, ../sass/meal.scss */
+/* line 292, ../sass/meal.scss */
 .popup .content .group label {
   color: #999;
   font-size: 18px;
@@ -313,13 +356,13 @@ nav {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 241, ../sass/meal.scss */
+/* line 305, ../sass/meal.scss */
 .popup .content .group input:focus ~ label, .popup .content .group input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #5264AE;
 }
-/* line 246, ../sass/meal.scss */
+/* line 310, ../sass/meal.scss */
 .popup .content .group .bars {
   position: relative;
   background-color: #757575;
@@ -329,14 +372,14 @@ nav {
 }
 
 /****End of Pop up****/
-/* line 263, ../sass/meal.scss */
+/* line 327, ../sass/meal.scss */
 .main-header,
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/* line 268, ../sass/meal.scss */
+/* line 332, ../sass/meal.scss */
 .main-header {
   background: steelblue;
   color: #FFF;
@@ -346,44 +389,46 @@ nav {
 }
 
 /****Layout****/
-/* line 276, ../sass/meal.scss */
+/* line 340, ../sass/meal.scss */
 .main-container {
   height: 100vh;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
-/* line 280, ../sass/meal.scss */
+/* line 344, ../sass/meal.scss */
 .item-view {
+  width: 100%;
+  opacity: .8;
   overflow: scroll;
   margin-top: 30px;
   height: 600px;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-/* line 287, ../sass/meal.scss */
+/* line 353, ../sass/meal.scss */
 .item-view .title {
   padding: 10px 0 10px 0;
-  background-color: #1abc9c;
+  background-color: #51e980;
 }
-/* line 290, ../sass/meal.scss */
+/* line 356, ../sass/meal.scss */
 .item-view .title h1 {
   font-weight: 100;
   padding-left: 20px;
-  color: #fff;
-  font-size: 36px;
+  color: white;
+  font-size: 25px;
   text-align: left;
 }
-/* line 298, ../sass/meal.scss */
+/* line 364, ../sass/meal.scss */
 .item-view .button-box {
   padding-top: 10px;
   margin-left: 20px;
   text-align: left;
 }
-/* line 303, ../sass/meal.scss */
+/* line 369, ../sass/meal.scss */
 .item-view .table-box {
   margin-top: 20px;
 }
-/* line 306, ../sass/meal.scss */
+/* line 372, ../sass/meal.scss */
 .item-view .table-box .table-wrap {
   padding: 5px 0 5px 0;
   border: 1px solid;

@@ -59,7 +59,7 @@
 				
 				<form action="">
 					<div></div>
-					<div class="money"><p>消費金額:$         </p><input type="text" value="4000"></div>
+					<div class="money"><p>消費金額:$</p><input type="text" value="4000"></div>
 					
 					<div class="btn btn-danger" >清除</div>
 					<input class="btn btn-success"type="submit" value="結帳">

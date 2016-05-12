@@ -2,73 +2,44 @@
 @import "compass/css3";
 
 $navbar-color: steelblue;
-$title-bg: #1abc9c;
+$title-bg: #51e980;
 $icon-color: #1abc9c;
 $button-color: #3ac569;
+$ggr:#51e980;
+$b:#58f;
+$black: #231F20;
+$mainbg: #f2f2f2;
 
-/****Nav****/
-nav{
-  padding-right: 20px;
-}
-.menu-icon{
-  letter-spacing: 2px;
-  left: 20px;
-  z-index: 20;
-  width: 50px;
-  height: 50px;
-  margin: 0 0 0 auto;
-  position: fixed;
-  cursor: pointer;
-  transition: background 0.5s;
+
+body{
+  magin: 0;
+  padding: 0;
 }
 
-.menu-icon{
-  span,span:before,span:after{
-    background-color: #fff;
-    float: left;
-    cursor: pointer;
-    border-radius: 1px;
-    height: 3px;
-    width: 30px;
-    position: absolute;
-    left: 15%;
-    top: 50%;
-    display: block;
-    content: '';
-    transition: all 0.5s ease-in-out;
-  }
-  
-  span:before{
-    background-color: #fff;
-    left: 0;
-    top: -10px;
-  }
-  span:after{
-    background-color: #fff;
-    left: 0;
-    top: 10px;
-
-  }
+@mixin transition($in){
+    transition:$in;
+    -o-transition:$in;
+    -ms-transition:$in;
+    -webkit-transition:$in;
+    -moz-transition:$in;
 }
 
-.active{
-    background: #304453;
-    
-    span{
-      background-color: transparent;
-    }
-    span:before,span:after{
-      top: 0;
-    }
+@mixin transform($in){
+  transform:$in;
+  -ms-transform:$in;
+  -o-transform:$in;
+  -webkit-transform:$in;
+  -moz-transform:$in;
+}
 
-    span:before{
-      transform: rotate(135deg);
-    }
-    span:after{
-      transform: rotate(-135deg);
-    }
+@mixin box-shadow($in) {
+  box-shadow:$in;
+  -ms-box-shadow:$in;
+  -o-box-shadow:$in;
+  -webkit-box-shadow:$in;
+  -moz-box-shadow:$in;
+}
 
-  }
 
 
 /*Overlay Menu*/
@@ -116,6 +87,99 @@ nav{
   visibility: visible;
   opacity: 1;
 }
+
+/****Nav****/
+span.bars{
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    background-color: #000;
+    border-radius: 2px;
+  }
+
+#togg_menu{
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 13px;
+  margin-left: 10px;
+  &:focus~.megaMenu{
+    @include transform(translateX(0px));
+  }
+}
+
+header{
+  width: 100%;
+  height:60px;
+  
+
+  .megaMenu{
+    @include transform(translateX(-270px));
+    @include transition(all 0.3s ease-in-out);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(35, 31, 32, 1);
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    padding-top: 50px;
+    z-index:100;
+    border-radius: 2px solid #ddd;
+    // @include box-shadow(2px 2px 80px 3px #000); 
+  
+  ul{
+    padding: 0;
+    margin: 0;
+    
+
+  }
+
+  li{
+    &.title{
+      border-top: none;
+      h1{
+      font-weight: 100;
+      font-family:Helvetica, sans-serif;
+      color:#FFF;
+      font-size: 30px;
+    }
+    }
+    display: block;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid lighten($black, 20%);
+    
+    a{
+      color:lighten($black, 20%);
+      padding: 15px 0;
+      width: 90%;
+      text-decoration:none;
+      display:inline-block;
+      @include transition(all 0.3s ease-in-out);
+      
+      &:hover{
+        color:$ggr;
+      }
+    }
+    &:hover{
+      border-ledt: 5px solid $ggr;
+    }
+  }
+}
+
+}
+
+
+
+
+
+
 /****End of Nav****/
 
 /****Pop up****/
@@ -275,13 +339,15 @@ nav{
 /****Layout****/
 .main-container{
 	height: 100vh;
-	background-color: #F2F2F2;
+	background-color: $mainbg;
 }
 .item-view{
+  width: 100%;
+  opacity: .8;
 	overflow: scroll;
 	margin-top: 30px;
 	height: 600px;
-	background-color: white;
+	background-color:#fff;
 	box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
 
 	.title{
@@ -290,8 +356,8 @@ nav{
 		h1{	
 			font-weight: 100;
 			padding-left: 20px;
-			color:#fff;
-			font-size: 36px;
+			color:lighten(white, 60%);
+			font-size: 25px;
 			text-align: left;
 			}
 	}
@@ -311,6 +377,7 @@ nav{
     }
 	}
 }
+
 
 
 
