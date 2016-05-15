@@ -13,26 +13,11 @@
 	</head>
 	<body>
 
-<!-- Navbar -->
 <div class="main-container">
 	
+<!-- Navbar -->
 
-	<header>
-		<button id="togg_menu">
-		<span class="bars"></span>
-		<span class="bars"></span>
-		<span class="bars"></span>
-	</button>
-
-		<ul class="megaMenu">
-
-			<li class="title"><h1>Menu</h1></li>
-			<li class="stuff"><a href="">點餐</a></li>
-			<li class="stuff"><a href="">新增餐點</a></li>
-			<li class="stuff"><a href="">新增類別</a></li>
-			<li class="stuff"><a href="">營收</a></li>
-		</ul>
-	</header>
+	<header id="nav-template"></header>
 
 <!-- End of Navbar-->
 
@@ -132,11 +117,16 @@
 				</div>
 			</div>
 		</div>
+		<div id="test"></div>
+	
+
 		<!-- End of 類別輸入欄 -->
 <!-- Enf of content -->
 		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>			
 		<script type="text/javascript" src="js/head.js"></script>	
+		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+		<script type="text/javascript" src="template/Nav.template.js"></script>	
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-	
+		
 	</body>
 </html>

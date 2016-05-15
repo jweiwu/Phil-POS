@@ -1,5 +1,7 @@
 
-
+var data = {
+	name: "test"
+};
 
 $(document).ready( function () {
     $('#table_id').DataTable();
@@ -13,7 +15,9 @@ $(document).ready( function () {
 	});
 
 
-    
+    var template = Handlebars.templates.nav;
+    $('#nav-template').html(template);
+
 
 });
 

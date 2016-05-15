@@ -25,3 +25,8 @@ $('div .glyphicon-trash').click(function(){
 	num_value = num.value;
 	alert(num_value);
 });
+
+
+
+var template = Handlebars.templates.nav;
+$('#nav-template').html(template);

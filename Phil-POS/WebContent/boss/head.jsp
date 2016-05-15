@@ -14,31 +14,8 @@
 	<body>
 
 <!-- Navbar -->
-		<section class="overlay-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3"></div>
-					<div class="col-lg-6">
-						
-						<ul>
-						
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="main-container">
-			<header class="main-header">
-				<nav>
-			<div class="navbar-brand"><a href="" class="logo-title"></a></div>
-			
-			<div class="menu">
-				
-				<div  class="menu-icon">
-					<span></span>
-				</div>
-			</div>
-		</nav>	
+		
+	<header id="nav-template"></header>
 <!-- End of Navbar-->
 
 
@@ -100,6 +77,8 @@
 <!-- Enf of content -->
 		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>			
 		<script type="text/javascript" src="js/head.js"></script>	
+		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+		<script type="text/javascript" src="template/Nav.template.js"></script>	
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 	
 	</body>

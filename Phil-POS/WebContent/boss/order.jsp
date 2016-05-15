@@ -108,6 +108,8 @@
 <script type="text/javascript" src="jquery-1.11.3.js"></script>	
 <script type="text/javascript" src="handlebars-v4.0.5.js"></script>	
 <script type="text/javascript" src="order.js"></script>	
+<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+<script type="text/javascript" src="template/Nav.template.js"></script>	
 
 </body>
 </html>
