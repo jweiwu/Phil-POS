@@ -20,7 +20,7 @@
 
 
 <!-- main content -->
-		</header>
+
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-md-2"></div>
@@ -58,7 +58,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
 		<!-- 類別輸入欄 -->
 		<div id="popup1" class="overlay">

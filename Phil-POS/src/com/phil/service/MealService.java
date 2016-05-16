@@ -21,7 +21,7 @@ public class MealService {
 
 	public List<ShowMeal> showMeals() throws Exception {
 		List<ShowMeal> meals = new ArrayList<ShowMeal>();
-		String sql = "SELECT * FROM `meal` JOIN `head` USING (`hid`);";
+		String sql = "SELECT * FROM `meal` JOIN `head` USING (`hid`) ORDER BY `hid`;";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

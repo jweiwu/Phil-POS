@@ -11,9 +11,11 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>Login</filter-name>
-		<url-pattern>/welcome</url-pattern>
+		<url-pattern>/Welcome.jsp</url-pattern>
+		<url-pattern>/Order.jsp</url-pattern>
 		<url-pattern>/boss/*</url-pattern>
 	</filter-mapping>
+	
 	<filter>
 		<filter-name>BossAuth</filter-name>
 		<filter-class>com.phil.filter.BossAuthFilter</filter-class>
