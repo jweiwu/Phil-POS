@@ -232,7 +232,7 @@ header .megaMenu li:hover {
 
 /****End of Nav****/
 /****Pop up****/
-/* line 186, ../sass/meal.scss */
+/* line 185, ../sass/meal.scss */
 .popup {
   opacity: 0.8;
   margin: 70px auto;
@@ -244,14 +244,14 @@ header .megaMenu li:hover {
   position: relative;
   transition: all 5s ease-in-out;
 }
-/* line 197, ../sass/meal.scss */
+/* line 196, ../sass/meal.scss */
 .popup h1 {
   text-align: center;
   font-size: 28px;
   color: #999;
 }
 
-/* line 204, ../sass/meal.scss */
+/* line 203, ../sass/meal.scss */
 .popup h2 {
   font-size: 20px;
   padding: 10px 0 10px 0;
@@ -260,7 +260,7 @@ header .megaMenu li:hover {
   font-family: Tahoma, Arial, sans-serif;
 }
 
-/* line 213, ../sass/meal.scss */
+/* line 212, ../sass/meal.scss */
 .popup .close {
   position: absolute;
   top: 20px;
@@ -272,13 +272,13 @@ header .megaMenu li:hover {
   color: #333;
 }
 
-/* line 223, ../sass/meal.scss */
+/* line 222, ../sass/meal.scss */
 .popup .close:hover {
   color: #06D85F;
 }
 
 /****表單輸入****/
-/* line 228, ../sass/meal.scss */
+/* line 227, ../sass/meal.scss */
 .popup .content {
   text-align: center;
   max-height: 100%;
@@ -286,7 +286,7 @@ header .megaMenu li:hover {
   margin: 0 auto;
   padding-top: 15px;
 }
-/* line 235, ../sass/meal.scss */
+/* line 234, ../sass/meal.scss */
 .popup .content input[type='submit'] {
   opacity: .8;
   width: 100px;
@@ -300,13 +300,13 @@ header .megaMenu li:hover {
   font-weight: 500;
   background-color: #3ac569;
 }
-/* line 250, ../sass/meal.scss */
+/* line 249, ../sass/meal.scss */
 .popup .content .group {
   position: relative;
   margin-top: 20px;
   margin-bottom: 45px;
 }
-/* line 256, ../sass/meal.scss */
+/* line 255, ../sass/meal.scss */
 .popup .content .group .icon {
   color: #1abc9c;
   font-size: 25px;
@@ -314,7 +314,7 @@ header .megaMenu li:hover {
   left: -40px;
   top: 10px;
 }
-/* line 264, ../sass/meal.scss */
+/* line 263, ../sass/meal.scss */
 .popup .content .group input[type='text'] {
   padding: 10px 10px 10px 5px;
   font-size: 18px;
@@ -323,11 +323,11 @@ header .megaMenu li:hover {
   border: none;
   border-bottom: 1px solid #757575;
 }
-/* line 272, ../sass/meal.scss */
+/* line 271, ../sass/meal.scss */
 .popup .content .group input[type='text']:focus {
   outline: none;
 }
-/* line 277, ../sass/meal.scss */
+/* line 276, ../sass/meal.scss */
 .popup .content .group select {
   width: 200px;
   font-size: 18px;
@@ -339,11 +339,11 @@ header .megaMenu li:hover {
   box-shadow: none;
   color: #999;
 }
-/* line 287, ../sass/meal.scss */
+/* line 286, ../sass/meal.scss */
 .popup .content .group select:focus {
   outline: none;
 }
-/* line 292, ../sass/meal.scss */
+/* line 291, ../sass/meal.scss */
 .popup .content .group label {
   color: #999;
   font-size: 18px;
@@ -356,13 +356,13 @@ header .megaMenu li:hover {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 305, ../sass/meal.scss */
+/* line 304, ../sass/meal.scss */
 .popup .content .group input:focus ~ label, .popup .content .group input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #5264AE;
 }
-/* line 310, ../sass/meal.scss */
+/* line 309, ../sass/meal.scss */
 .popup .content .group .bars {
   position: relative;
   background-color: #757575;
@@ -372,14 +372,14 @@ header .megaMenu li:hover {
 }
 
 /****End of Pop up****/
-/* line 327, ../sass/meal.scss */
+/* line 326, ../sass/meal.scss */
 .main-header,
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/* line 332, ../sass/meal.scss */
+/* line 331, ../sass/meal.scss */
 .main-header {
   background: steelblue;
   color: #FFF;
@@ -389,13 +389,13 @@ header .megaMenu li:hover {
 }
 
 /****Layout****/
-/* line 340, ../sass/meal.scss */
+/* line 339, ../sass/meal.scss */
 .main-container {
   height: 100vh;
   background-color: #f2f2f2;
 }
 
-/* line 344, ../sass/meal.scss */
+/* line 343, ../sass/meal.scss */
 .item-view {
   width: 100%;
   opacity: .8;
@@ -405,12 +405,12 @@ header .megaMenu li:hover {
   background-color: #fff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-/* line 353, ../sass/meal.scss */
+/* line 352, ../sass/meal.scss */
 .item-view .title {
   padding: 10px 0 10px 0;
   background-color: #51e980;
 }
-/* line 356, ../sass/meal.scss */
+/* line 355, ../sass/meal.scss */
 .item-view .title h1 {
   font-weight: 100;
   padding-left: 20px;
@@ -418,17 +418,17 @@ header .megaMenu li:hover {
   font-size: 25px;
   text-align: left;
 }
-/* line 364, ../sass/meal.scss */
+/* line 363, ../sass/meal.scss */
 .item-view .button-box {
   padding-top: 10px;
   margin-left: 20px;
   text-align: left;
 }
-/* line 369, ../sass/meal.scss */
+/* line 368, ../sass/meal.scss */
 .item-view .table-box {
   margin-top: 20px;
 }
-/* line 372, ../sass/meal.scss */
+/* line 371, ../sass/meal.scss */
 .item-view .table-box .table-wrap {
   padding: 5px 0 5px 0;
   border: 1px solid;
