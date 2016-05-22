@@ -10,22 +10,23 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 import com.phil.dbc.DBconnection;
 import com.phil.model.Head;
-import com.phil.model.Meal;
+import com.phil.model.Order;
 import com.phil.service.HeadService;
 import com.phil.service.MealService;
 import com.phil.viewmodel.ShowMeal;
 
-public class OrderAction extends ActionSupport implements ModelDriven<Meal>, Preparable {
+public class OrderAction extends ActionSupport implements ModelDriven<List<Order>>, Preparable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 530495108269371667L;
 	private DBconnection dbc = null;
-	private Meal meal = new Meal();
+	private Order order = new Order();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
 	private Map<String, Object> dataMap = new HashMap<String, Object>();
+	private List<Order> orders = new ArrayList<Order>();
 
 	@Override
 	public void prepare() {
@@ -45,7 +46,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<Meal>, Pre
 			setHeads(headService.showHeads());
 			dataMap.put("meals", meals);
 			dataMap.put("heads", heads);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
@@ -61,56 +62,61 @@ public class OrderAction extends ActionSupport implements ModelDriven<Meal>, Pre
 		return SUCCESS;
 	}
 
-//	public String insert() {
-//		MealService mealService = new MealService(dbc.getConnection());
-//
-//		try {
-//			if (mealService.insertMeal(meal)) {
-//				return SUCCESS;
-//			} else {
-//				return ERROR;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ERROR;
-//		} finally {
-//			try {
-//				mealService.closeConn();
-//				dbc.close();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	}
-//
-//	public String delete() {
-//		MealService mealService = new MealService(dbc.getConnection());
-//
-//		try {
-//			if (mealService.deleteMeal(meal)) {
-//				return SUCCESS;
-//			} else {
-//				return ERROR;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return ERROR;
-//		} finally {
-//			try {
-//				mealService.closeConn();
-//				dbc.close();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	}
+	public String insert() {
 
-	public Meal getMeal() {
-		return meal;
+		System.out.println(orders.size());
+
+		return SUCCESS;
+
+		// MealService mealService = new MealService(dbc.getConnection());
+		//
+		// try {
+		// if (mealService.insertMeal(meal)) {
+		// return SUCCESS;
+		// } else {
+		// return ERROR;
+		// }
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// return ERROR;
+		// } finally {
+		// try {
+		// mealService.closeConn();
+		// dbc.close();
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// }
 	}
 
-	public void setMeal(Meal meal) {
-		this.meal = meal;
+	// public String delete() {
+	// MealService mealService = new MealService(dbc.getConnection());
+	//
+	// try {
+	// if (mealService.deleteMeal(meal)) {
+	// return SUCCESS;
+	// } else {
+	// return ERROR;
+	// }
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// return ERROR;
+	// } finally {
+	// try {
+	// mealService.closeConn();
+	// dbc.close();
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// }
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	public List<ShowMeal> getMeals() {
@@ -137,9 +143,17 @@ public class OrderAction extends ActionSupport implements ModelDriven<Meal>, Pre
 		this.dataMap = dataMap;
 	}
 
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 	@Override
-	public Meal getModel() {
-		return meal;
+	public List<Order> getModel() {
+		return orders;
 	}
 
 }
