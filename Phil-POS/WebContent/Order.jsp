@@ -28,7 +28,7 @@
 					str += "</div></div><br><br>";
 				}
 
-				$("#div1").html(str);
+				$("category").html(str);
 				
 			}
 		});
