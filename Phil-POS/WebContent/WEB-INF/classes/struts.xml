@@ -21,7 +21,7 @@
         </action>
         <action name="insertOrder" class="com.phil.action.OrderAction" method="insert">
 			<result type="json" name="success">
-				<param name="root">orders</param>
+				<param name="root">viewOrder.getOrderList()</param>
 			</result>
             <result name="error">Login.jsp</result>
 		</action>
