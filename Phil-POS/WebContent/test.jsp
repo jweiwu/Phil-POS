@@ -11,14 +11,18 @@
 <body>
 <div id="div1">123</div>
 <form id="form1" action="insertOrder" method="post">
-	<input name="orders[0].oid" type="text" value="71">
-	<input name="orders[0].discount" type="text" value="10">
-	<input name="orders[0].total" type="text" value="500">
-	<input name="orders[0].createtime" type="text" value="2016-5-22 22:47:30"><br>
-	<input name="orders[1].oid" type="text" value="71">
-	<input name="orders[1].discount" type="text" value="10">
-	<input name="orders[1].total" type="text" value="500">
-	<input name="orders[1].createtime" type="text" value="2016-5-22 22:47:30"><br>
+	<input name="order.discount" type="text" value="10">
+	<input name="order.total" type="text" value="500"><br><br>
+	<input name="orderList[0].mid" type="text" value="6">
+	<input name="orderList[0].quantity" type="text" value="1"><br>
+	<input name="customList[0].mid" type="text" value="6">
+	<input name="customList[0].cid" type="text" value="1"><br>
+	<input name="orderList[3].mid" type="text" value="9">
+	<input name="orderList[3].quantity" type="text" value="2"><br>
+	<input name="orderList[4].mid" type="text" value="10">
+	<input name="orderList[4].quantity" type="text" value="1"><br>
+	<input name="customList[4].mid" type="text" value="10">
+	<input name="customList[4].cid" type="text" value="3"><br>
 	<input type="submit" >
 
 </form>

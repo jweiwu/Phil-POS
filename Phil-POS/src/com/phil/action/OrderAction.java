@@ -13,9 +13,11 @@ import com.phil.model.Head;
 import com.phil.model.Order;
 import com.phil.service.HeadService;
 import com.phil.service.MealService;
+import com.phil.service.OrderService;
+import com.phil.viewmodel.ViewOrder;
 import com.phil.viewmodel.ShowMeal;
 
-public class OrderAction extends ActionSupport implements ModelDriven<List<Order>>, Preparable {
+public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>, Preparable {
 
 	/**
 	 * 
@@ -26,7 +28,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<List<Order
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
 	private Map<String, Object> dataMap = new HashMap<String, Object>();
-	private List<Order> orders = new ArrayList<Order>();
+	private ViewOrder viewOrder = new ViewOrder();
 
 	@Override
 	public void prepare() {
@@ -63,30 +65,25 @@ public class OrderAction extends ActionSupport implements ModelDriven<List<Order
 	}
 
 	public String insert() {
+		OrderService orderService = new OrderService(dbc.getConnection());
 
-		System.out.println(orders.size());
-
-		return SUCCESS;
-
-		// MealService mealService = new MealService(dbc.getConnection());
-		//
-		// try {
-		// if (mealService.insertMeal(meal)) {
-		// return SUCCESS;
-		// } else {
-		// return ERROR;
-		// }
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// return ERROR;
-		// } finally {
-		// try {
-		// mealService.closeConn();
-		// dbc.close();
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
-		// }
+		try {
+			if (orderService.insertOrder(viewOrder)) {
+				return SUCCESS;
+			} else {
+				return ERROR;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		} finally {
+			try {
+				orderService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	// public String delete() {
@@ -143,17 +140,17 @@ public class OrderAction extends ActionSupport implements ModelDriven<List<Order
 		this.dataMap = dataMap;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
+	public ViewOrder getViewOrder() {
+		return viewOrder;
 	}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
+	public void setViewOrder(ViewOrder viewOrder) {
+		this.viewOrder = viewOrder;
 	}
 
 	@Override
-	public List<Order> getModel() {
-		return orders;
+	public ViewOrder getModel() {
+		return viewOrder;
 	}
 
 }
