@@ -306,11 +306,11 @@ body {
   color: #000;
 }
 
-/* line 183, ../sass/style.scss */
-.hiden {
-  display: none;
+/*
+.hiden{
+	display: none;
 }
-
+*/
 /* line 189, ../sass/style.scss */
 body {
   margin: 0;

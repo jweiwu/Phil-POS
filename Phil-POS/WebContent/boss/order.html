@@ -5,7 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="sass/stylesheets/style.css">
 	<link rel="stylesheet" href="dist/css/bootstrap.css">
-	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+	
 	</head>
 <body>
 
@@ -34,11 +34,12 @@
 	<div id="export">
 		<input id="js-total" class="hiden" name="order.total" type="text" value="0">
 	
-	<input type="submit" value="確認">
+		<input type="submit" value="確認">
 	</div>
 </form>
 
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>			
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>		
+	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>	
 		<script type="text/javascript" src="js/order.js"></script>	
 		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
 		<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
@@ -59,7 +60,6 @@
 
   		<script id="export-template" type="text/x-handlebars-template">	
   			<div>
-  				
   				<input class="hiden" name={{mid}} type="text"  value={{price}}>
 				<input class="hiden" name={{quantity}} type="text" value={{quantity}}>
   			</div>	
