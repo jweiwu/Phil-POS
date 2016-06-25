@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 5, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -160,15 +161,15 @@ h1 {
  *  https://jwatt.org/2013/12/11/input-type-number-coming-to-mozilla
  *  https://bugzilla.mozilla.org/show_bug.cgi?id=344616
  */
-/* line 31, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 body {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Heveltica Neue","微軟正黑體";
 }
 
-/* line 38, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .order-view {
   width: 100%;
   height: 500px;
@@ -176,7 +177,7 @@ body {
   overflow: scroll;
   /*End of menu-item */
 }
-/* line 43, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .order-view .menu-item {
   width: 100%;
   height: 100px;
@@ -185,40 +186,40 @@ body {
   position: relative;
   /*End of row*/
 }
-/* line 50, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .order-view .menu-item .row {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 54, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .order-view .menu-item .row input[type="number"]::-webkit-outer-spin-button, .order-view .menu-item .row input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* line 59, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 .order-view .menu-item .row input[type="number"] {
   -moz-appearance: textfield;
   width: 30px;
   height: 35px;
   font-size: 25px;
 }
-/* line 65, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .order-view .menu-item .row p {
   padding-top: 31.5px;
 }
-/* line 68, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .order-view .menu-item .row span {
   padding-top: 27.5px;
 }
-/* line 69, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .order-view .menu-item .row span.icon {
   padding-left: 15px;
   color: #696969;
   font-size: 24px;
   cursor: pointer;
 }
-/* line 78, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .order-view .menu-item .pricebox {
   width: 70px;
   border: none;
@@ -230,55 +231,65 @@ body {
 
 /*end of order-view*/
 /****account****/
-/* line 94, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 #acount {
   position: relative;
   width: 100%;
   height: 200px;
   background-color: #87CEFA;
+  font-family: "Heveltica Neue";
+  font-weight: 200;
 }
-/* line 101, ../sass/style.scss */
-#acount .money {
-  margin-left: 100px;
-}
-/* line 103, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 #acount .money p {
-  font-size: 40px;
+  font-size: 28px;
   display: inline;
 }
-/* line 109, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 #acount .money input[type="text"] {
   width: 100px;
   background-color: #87CEFA;
   border: none;
-  font-size: 40px;
+  font-size: 28px;
 }
-/* line 119, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
+#acount .text-box {
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+/* line 136, ../sass/style.scss */
+#acount .button-box {
+  margin-right: 20px;
+  margin-top: 20px;
+  float: right;
+}
+/* line 145, ../sass/style.scss */
 #acount .btn {
   margin-top: 10px;
   margin-left: 20px;
   cursor: pointer;
-  font-size: 33px;
-  width: 200px;
+  font-size: 28px;
+  width: 150px;
   height: 58px;
 }
 
 /****category****/
-/* line 141, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 #category {
   border-bottom: 2px solid #DCDCDC;
   overflow: scroll;
   width: 100%;
   height: 200px;
 }
-/* line 146, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 #category .item {
   margin-top: 25px;
   padding-left: 30px;
   font-size: 18px;
 }
 
-/* line 157, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 #order-main-wrap .meal-item {
   color: black;
   position: relative;
@@ -287,20 +298,20 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-/* line 165, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 #order-main-wrap .meal-item h3, #order-main-wrap .meal-item p {
   display: inline;
 }
-/* line 167, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 #order-main-wrap .meal-item h3 {
   padding-left: 15px;
 }
-/* line 170, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 #order-main-wrap .meal-item p {
   position: absolute;
   right: 20px;
 }
-/* line 175, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 #order-main-wrap .meal-item i {
   font-size: 20px;
   color: #000;
@@ -311,21 +322,40 @@ body {
 	display: none;
 }
 */
-/* line 189, ../sass/style.scss */
+/* line 212, ../sass/style.scss */
 body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
 }
 
-/* line 195, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 * {
   font-family: Helvetica,sans-serif;
   color: #888;
 }
 
-/* line 200, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 a {
   text-decoration: none;
   display: inline-block;
+}
+
+/* line 228, ../sass/style.scss */
+#popup1 {
+  margin-left: -90px;
+  margin-top: -140px;
+  width: 180px;
+  height: 280px;
+  position: absolute;
+  z-index: 100;
+  background-color: red;
+  left: 50%;
+  top: 50%;
+  display: none;
+}
+
+/* line 241, ../sass/style.scss */
+#export {
+  display: none;
 }

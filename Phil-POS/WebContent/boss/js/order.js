@@ -117,6 +117,7 @@ $(document).ready(function(){
 			event.preventDefault();
 			exportOrderList(itemIdNum);
 	     	RemoverAllOrder();
+	     	$('#popup1').fadeIn();
 			// var itemView = document.getElementById('js-order-view')
 	
 			// for (i = 1 ;i<4 ;i=i+2){

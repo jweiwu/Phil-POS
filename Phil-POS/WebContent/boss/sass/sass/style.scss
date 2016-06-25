@@ -4,6 +4,16 @@
 
 $input-size: 200px;
 $font-size: 50px;
+$navbar-color: steelblue;
+$title-bg: #51e980;
+$icon-color: #1abc9c;
+$button-color: #3ac569;
+$ggr:#51e980;
+$b:#58f;
+$black: #231F20;
+$mainbg: #f2f2f2;
+
+
 /*
 
 1. nav
@@ -30,7 +40,7 @@ $font-size: 50px;
 
 body{
 	padding: 0;margin: 0;height: 100%;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Heveltica Neue","微軟正黑體";
 }
 
 
@@ -96,13 +106,15 @@ body{
 	width: 100%;
 	height: 200px;
 	background-color: #87CEFA;
-		
+			font-family: "Heveltica Neue";
+			font-weight:200;
 	
 	.money{
-		margin-left: 100px;
+		
+		
 		p{	
-			
-			font-size: 40px;
+
+			font-size: 28px;
 			display: inline;
 		}
 
@@ -111,25 +123,36 @@ body{
 			width: 100px;
 			background-color: #87CEFA ;
 			border: none;
-			font-size: 40px;
+			font-size: 28px;
 		} 
 	}
+
+	.text-box{
+		float: left;
+		margin-left: 20px;
+		margin-top: 20px;
+	}
 	
+	.button-box{
+		margin-right: 20px;
+		margin-top: 20px;
+		float: right;
+
+	}
+
+
 
 	.btn{
 		margin-top: 10px;
 		margin-left: 20px;
 		cursor: pointer;
-		font-size: 33px;
-		width: 200px;
+		font-size: 28px;
+		width: 150px;
 		height: 58px;
-		 
-	
-
 	}
 
 }
-//  end of account
+
 
 
 /****category****/
@@ -202,8 +225,20 @@ a {
   display: inline-block;
 }
 
+#popup1{
+	margin-left: -90px;
+	margin-top: -140px;
+	width: 180px;
+	height: 280px;
+	position: absolute; 
+	z-index: 100;
+	background-color: red;
+	left: 50%;
+	top: 50%;
+	display: none;
+}
 
-
-
-
+#export{
+	display: none;
+}
 
