@@ -8,7 +8,7 @@
 <body>
     <h2>Hello, <s:property value="#session.account.getName()" />!</h2>
     <ul>
-    	<li><a href="Order.jsp">Order</a></li>
+    	<li><a href="order.html">Order</a></li>
     	<li><a href="boss/heads">Show Heads</a></li>
     	<li><a href="boss/meals">Show Meals</a></li>
     	<li><a href="boss/customs">Show Customs</a></li>

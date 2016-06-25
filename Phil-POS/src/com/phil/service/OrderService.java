@@ -80,16 +80,19 @@ public class OrderService {
 							pstmt.setLong(1, order.getOid());
 							pstmt.setInt(2, orderList.get(i).getMid());
 							pstmt.setInt(3, orderList.get(i).getQuantity());
+							
 							pstmt.addBatch();
 						}
 					}
 
-					for (int i = 0; i < customList.size(); i++) {
-						if (customList.get(i) != null) {
-							pstmt2.setLong(1, order.getOid());
-							pstmt2.setInt(2, customList.get(i).getMid());
-							pstmt2.setInt(3, customList.get(i).getCid());
-							pstmt2.addBatch();
+					if (customList != null) {
+						for (int i = 0; i < customList.size(); i++) {
+							if (customList.get(i) != null) {
+								pstmt2.setLong(1, order.getOid());
+								pstmt2.setInt(2, customList.get(i).getMid());
+								pstmt2.setInt(3, customList.get(i).getCid());
+								pstmt2.addBatch();
+							}
 						}
 					}
 
@@ -104,7 +107,7 @@ public class OrderService {
 					} else {
 						if (Arrays.binarySearch(updateCount, 0) != -1)
 							System.out.println("Insert orderlist unsuccessfully");
-						
+
 						if (Arrays.binarySearch(updateCount2, 0) != -1)
 							System.out.println("Insert customlist unsuccessfully");
 					}

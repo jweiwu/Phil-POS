@@ -11,10 +11,12 @@ import com.opensymphony.xwork2.Preparable;
 import com.phil.dbc.DBconnection;
 import com.phil.model.Head;
 import com.phil.model.Order;
+import com.phil.model.OrderList;
 import com.phil.service.HeadService;
 import com.phil.service.MealService;
 import com.phil.service.OrderService;
 import com.phil.viewmodel.ViewOrder;
+
 import com.phil.viewmodel.ShowMeal;
 
 public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>, Preparable {
@@ -25,6 +27,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 	private static final long serialVersionUID = 530495108269371667L;
 	private DBconnection dbc = null;
 	private Order order = new Order();
+	private List<OrderList> orderList = new ArrayList<OrderList>();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
 	private Map<String, Object> dataMap = new HashMap<String, Object>();
@@ -66,7 +69,14 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 
 	public String insert() {
 		OrderService orderService = new OrderService(dbc.getConnection());
+		// System.out.println(order.getDiscount());
+		// System.out.println(orderList.size());
 
+		// System.out.println(dataMap.size());
+		// System.out.println(dataMap.keySet().toString());
+		// viewOrder = (ViewOrder) dataMap;
+		// System.out.println(String.valueOf(dataMap.get("order")));
+		// return SUCCESS;
 		try {
 			if (orderService.insertOrder(viewOrder)) {
 				return SUCCESS;
@@ -116,6 +126,14 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 		this.order = order;
 	}
 
+	public List<OrderList> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(List<OrderList> orderList) {
+		this.orderList = orderList;
+	}
+
 	public List<ShowMeal> getMeals() {
 		return meals;
 	}
@@ -152,5 +170,4 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 	public ViewOrder getModel() {
 		return viewOrder;
 	}
-
 }
