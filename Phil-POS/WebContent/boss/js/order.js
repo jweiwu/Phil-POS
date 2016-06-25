@@ -145,7 +145,9 @@ $(document).ready(function(){
 	function exportOrderList(Num){
 		this.itemIdNum = Num;
 		for(i = 1; i<=itemIdNum ;i++){
-		
+			v = i -1
+			orderList[i].name = "orderList["+v+"].mid";
+			orderList[i].name2 = "orderList["+v+"].quantity";
 			var html = template2(orderList[i]);
 			$("#export").append(html);
 		}
@@ -173,7 +175,9 @@ $(document).ready(function(){
 					mid: result.meals[i].mid,
 					meal: result.meals[i].meal,
 					price: result.meals[i].price,
-					quantity: 1
+					quantity: 1,
+					name:"..",
+					name2:".."
 				};
 
 				allprice = allprice + MealData.price;
