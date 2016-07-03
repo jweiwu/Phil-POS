@@ -17,15 +17,19 @@
 				<form action="insertOrder" method="post">
 					<div id="export">
 						<input id="js-total" class="hiden" name="order.total" type="text" value="0">
-					
+						
 					</div>
 					<input type="submit" value="確認">
 				</form>
 			
 			</div>
 </div>
+
+
 	<header class="main-header">
-			<h1>點餐系統</h1>
+			<!-- <h1>點餐系統</h1> -->
+			<span>點餐系統</span>
+			<a href="boss/head.html"><span class="glyphicon glyphicon-home"></span></a>
 	</header>
 	<div class="main-container">
 		<div class="left">
@@ -44,7 +48,10 @@
 		</div>
 		
 		<div class="right">
-			<div id="category"></div>
+			<div id="category">
+				
+
+			</div>
 			<div id="order-main-wrap"></div>
 		</div>
 		<div class="clear"></div>
@@ -80,9 +87,9 @@
 
   		<script id="export-template" type="text/x-handlebars-template">	
   			<div>
-  				<input class="hiden" name={{name}} type="text"  value={{price}}>
+  				<input class="hiden" name={{name2}} type="text"  value={{price}}>
   				
-				<input class="hiden" name={{name2}} type="text" value={{quantity}}>
+				<input class="hiden" name={{name}} type="text" value={{quantity}}>
   			</div>	
   		</script>
 </body>
