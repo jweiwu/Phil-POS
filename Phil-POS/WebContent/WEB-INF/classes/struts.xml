@@ -20,7 +20,7 @@
             <result name="error">Login.jsp</result>
         </action>
         <action name="insertOrder" class="com.phil.action.OrderAction" method="insert">
-			<result name="success">order.html</result>
+			<result type="redirect" name="success">order.html</result>
             <result name="error">Login.jsp</result>
 		</action>
     </package>
