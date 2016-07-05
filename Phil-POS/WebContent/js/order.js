@@ -18,7 +18,7 @@ function cleanOrderList(){
 // Show Headname
 function showHead(){
 	for (i = 0; i < result.heads.length; i++) {
-					showHeadName += '<div class="item col-md-3"><button id="'+result.heads[i].hid+'">'+result.heads[i].item+'</button></div>'
+					showHeadName += '<div class="item col-xs-3 col-md-3"><button id="'+result.heads[i].hid+'">'+result.heads[i].item+'</button></div>'
 				}
 	$("#category").html(showHeadName);
 } // End of Show Head name
