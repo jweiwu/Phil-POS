@@ -3,14 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="boss/sass/stylesheets/style.css">
-	<link rel="stylesheet" href="boss/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="sass/stylesheets/style.css">
+	<link rel="stylesheet" href="dist/css/bootstrap.css">
 	
 	</head>
 <body>
-
 <div class="main-wrap">
-
 	<div id="popup1" class="overlay">
 			<div class="popup">
 			
@@ -23,8 +21,7 @@
 				</form>
 			
 			</div>
-</div>
-
+	</div>
 
 	<header class="main-header">
 			<!-- <h1>點餐系統</h1> -->
@@ -50,7 +47,10 @@
 		<div class="right">
 			<div id="category">
 				
-
+				<div class="item col-xs-3 col-md-3"><button>漢堡</button></div>
+				<div class="item col-xs-3 col-md-3"><button>漢堡</button></div>
+				<div class="item col-xs-3 col-md-3"><button>漢堡</button></div>
+				<div class="item col-xs-3 col-md-3"><button>漢堡</button></div>
 			</div>
 			<div id="order-main-wrap"></div>
 		</div>
@@ -65,12 +65,12 @@
 	
 </div>
 
-	<script type="text/javascript" src="boss/js/jquery-1.11.3.js"></script>		
-	<script type="text/javascript" src="boss/dist/js/bootstrap.min.js"></script>	
-		<script type="text/javascript" src="boss/js/order.js"></script>	
-		<script type="text/javascript" src="boss/js/handlebars.runtime-v4.0.5.js"></script>	
-		<script type="text/javascript" src="boss/js/handlebars-v4.0.5.js"></script>	
-		<script type="text/javascript" src="boss/template/Nav.template.js"></script>	
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>		
+	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>	
+		<script type="text/javascript" src="js/order.js"></script>	
+		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+		<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
+		<script type="text/javascript" src="template/Nav.template.js"></script>	
 		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 		<script id="test-template" type="text/x-handlebars-template">
           	<div id={{id}} class="menu-item"> 
@@ -87,9 +87,9 @@
 
   		<script id="export-template" type="text/x-handlebars-template">	
   			<div>
-  				<input class="hiden" name={{name2}} type="text"  value={{quantity}}>
+  				<input class="hiden" name={{name2}} type="text"  value={{price}}>
   				
-				<input class="hiden" name={{name}} type="text" value={{mid}}>
+				<input class="hiden" name={{name}} type="text" value={{quantity}}>
   			</div>	
   		</script>
 </body>
