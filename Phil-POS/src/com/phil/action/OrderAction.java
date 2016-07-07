@@ -27,6 +27,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 	private static final long serialVersionUID = 530495108269371667L;
 	private DBconnection dbc = null;
 	private Order order = new Order();
+	private List<Order> orders = new ArrayList<Order>();
 	private List<OrderList> orderList = new ArrayList<OrderList>();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
@@ -69,20 +70,32 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 
 	public String insert() {
 		OrderService orderService = new OrderService(dbc.getConnection());
-		// System.out.println(order.getDiscount());
-		// System.out.println(orderList.size());
-
-		// System.out.println(dataMap.size());
-		// System.out.println(dataMap.keySet().toString());
-		// viewOrder = (ViewOrder) dataMap;
-		// System.out.println(String.valueOf(dataMap.get("order")));
-		// return SUCCESS;
+		
 		try {
 			if (orderService.insertOrder(viewOrder)) {
 				return SUCCESS;
 			} else {
 				return ERROR;
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		} finally {
+			try {
+				orderService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public String getTodayOrders() {
+		OrderService orderService = new OrderService(dbc.getConnection());
+//		System.out.println("get");
+		try {
+			setOrders(orderService.getTodayOrders());
+			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ERROR;
@@ -124,6 +137,14 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 	public List<OrderList> getOrderList() {
@@ -170,4 +191,5 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 	public ViewOrder getModel() {
 		return viewOrder;
 	}
+
 }

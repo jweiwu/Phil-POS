@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -20,28 +21,6 @@ public class OrderService {
 	public OrderService(Connection conn) {
 		this.conn = conn;
 	}
-
-	// public List<Head> showHeads() throws Exception {
-	// List<Head> heads = new ArrayList<Head>();
-	// String sql = "SELECT * FROM `head`;";
-	//
-	// try {
-	// pstmt = conn.prepareStatement(sql);
-	// ResultSet rs = pstmt.executeQuery();
-	//
-	// while (rs.next()) {
-	// Head head = new Head();
-	// head.setHid(rs.getInt("hid"));
-	// head.setItem(rs.getString("item"));
-	// head.setCreatetime(rs.getString("createtime"));
-	// heads.add(head);
-	// }
-	//
-	// return heads;
-	// } catch (Exception e) {
-	// throw e;
-	// }
-	// }
 
 	public boolean insertOrder(ViewOrder viewOrder) throws Exception {
 		boolean bool = false;
@@ -123,6 +102,37 @@ public class OrderService {
 		}
 
 		return bool;
+	}
+	
+
+	public List<Order> getTodayOrders() throws Exception {
+		List<Order> orders = new ArrayList<Order>();
+		Date date = new Date();
+		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String start = sdFormat.format(date) + " 00:00:00";
+		String end = sdFormat.format(date) + " 23:59:59";
+		
+		try {
+			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, start);
+			pstmt.setString(2, end);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Order order = new Order();
+				order.setOid(rs.getLong("oid"));
+				order.setDiscount(rs.getInt("discount"));
+				order.setTotal(rs.getInt("total"));
+				order.setCreatetime(rs.getString("createtime"));
+				orders.add(order);
+			}
+			
+		} catch (Exception e) {
+			throw e;
+		}
+		
+		return orders;
 	}
 
 	// public boolean deleteHead(Head head) throws Exception {

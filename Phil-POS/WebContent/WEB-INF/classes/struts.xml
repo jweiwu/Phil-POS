@@ -23,6 +23,10 @@
 			<result type="redirect" name="success">order.html</result>
             <result name="error">Login.jsp</result>
 		</action>
+        <action name="todayOrders" class="com.phil.action.OrderAction" method="getTodayOrders">
+			<result name="success">ShowOrders.jsp</result>
+            <result name="error">Login.jsp</result>
+		</action>
     </package>
     
     <package name="boss" extends="struts-default" namespace="/boss">

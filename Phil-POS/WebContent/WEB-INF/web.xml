@@ -24,7 +24,9 @@
 		<filter-name>Login</filter-name>
 		<url-pattern>/Welcome.jsp</url-pattern>
 		<url-pattern>/order.html</url-pattern>
+		<url-pattern>/ShowOrders.jsp</url-pattern>
 		<url-pattern>/orderList</url-pattern>
+		<url-pattern>/todayOrders</url-pattern>
 		<url-pattern>/boss/*</url-pattern>
 	</filter-mapping>
 
