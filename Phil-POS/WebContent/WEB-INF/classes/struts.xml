@@ -23,7 +23,11 @@
 			<result type="redirect" name="success">order.html</result>
             <result name="error">Login.jsp</result>
 		</action>
-        <action name="todayOrders" class="com.phil.action.OrderAction" method="getTodayOrders">
+        <action name="todayOrders" class="com.phil.action.OdrInfoAction" method="getTodayOrders">
+			<result name="success">ShowOrders.jsp</result>
+            <result name="error">Login.jsp</result>
+		</action>
+        <action name="dayOrders" class="com.phil.action.OdrInfoAction" method="getDayOrders">
 			<result name="success">ShowOrders.jsp</result>
             <result name="error">Login.jsp</result>
 		</action>

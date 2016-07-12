@@ -27,7 +27,6 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 	private static final long serialVersionUID = 530495108269371667L;
 	private DBconnection dbc = null;
 	private Order order = new Order();
-	private List<Order> orders = new ArrayList<Order>();
 	private List<OrderList> orderList = new ArrayList<OrderList>();
 	private List<ShowMeal> meals = new ArrayList<ShowMeal>();
 	private List<Head> heads = new ArrayList<Head>();
@@ -90,61 +89,12 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 		}
 	}
 	
-	public String getTodayOrders() {
-		OrderService orderService = new OrderService(dbc.getConnection());
-//		System.out.println("get");
-		try {
-			setOrders(orderService.getTodayOrders());
-			return SUCCESS;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ERROR;
-		} finally {
-			try {
-				orderService.closeConn();
-				dbc.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	// public String delete() {
-	// MealService mealService = new MealService(dbc.getConnection());
-	//
-	// try {
-	// if (mealService.deleteMeal(meal)) {
-	// return SUCCESS;
-	// } else {
-	// return ERROR;
-	// }
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// return ERROR;
-	// } finally {
-	// try {
-	// mealService.closeConn();
-	// dbc.close();
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-
 	public Order getOrder() {
 		return order;
 	}
 
 	public void setOrder(Order order) {
 		this.order = order;
-	}
-
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
 	}
 
 	public List<OrderList> getOrderList() {
