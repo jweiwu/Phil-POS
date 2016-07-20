@@ -26,8 +26,10 @@
 	<header class="main-header">
 			<!-- <h1>點餐系統</h1> -->
 			<span>點餐系統</span>
+			<span>
 			<a href="todayOrders"><span class="glyphicon glyphicon-list-alt"></span></a>
 			<a href="boss/head.html"><span class="glyphicon glyphicon-home"></span></a>
+			</span>
 	</header>
 	<div class="main-container">
 		<div class="left">
@@ -62,13 +64,17 @@
 	
 </div>
 
+
+
+
+
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>		
 	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>	
-		<script type="text/javascript" src="js/order.js"></script>	
-		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
-		<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
-		<script type="text/javascript" src="template/Nav.template.js"></script>	
-		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/order.js"></script>	
+	<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+	<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
+	<script type="text/javascript" src="template/Nav.template.js"></script>	
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 		<script id="test-template" type="text/x-handlebars-template">
           	<div id={{id}} class="menu-item"> 
 					<div class="row">
@@ -77,7 +83,7 @@
 								<span class="icon glyphicon glyphicon-plus js-plus"></span>
 								<span class="icon glyphicon glyphicon-minus js-minus"></span>
 							 	<span class="icon glyphicon glyphicon-trash"></span>
-							 	<input class="pricebox" type="text" name= {{price}} value={{price}} disabled="disabled">	
+							 	<input class="pricebox" type="text" name= {{price}} value={{price}} disabled="disabled">
 		 			</div>
 			</div>	
   		</script>
