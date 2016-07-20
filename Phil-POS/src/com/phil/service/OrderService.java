@@ -103,20 +103,33 @@ public class OrderService {
 
 		return bool;
 	}
-	
 
-	public List<Order> getTodayOrders() throws Exception {
-		List<Order> orders = new ArrayList<Order>();
+	public List<Order> TodayOrders() throws Exception {
 		Date date = new Date();
 		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
-		String start = sdFormat.format(date) + " 00:00:00";
-		String end = sdFormat.format(date) + " 23:59:59";
+		String startTime = sdFormat.format(date) + " 00:00:00";
+		String endTime = sdFormat.format(date) + " 23:59:59";
+		
+		return getDayOrders(startTime, endTime);
+	}
+
+	public List<Order> DayOrders(Order order) throws Exception {
+		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = sdFormat.parse(order.getCreatetime());
+		String startTime = sdFormat.format(date) + " 00:00:00";
+		String endTime = sdFormat.format(date) + " 23:59:59";
+		
+		return getDayOrders(startTime, endTime);
+	}
+	
+	private List<Order> getDayOrders(String startTime, String endTime) throws Exception {
+		List<Order> orders = new ArrayList<Order>();
 		
 		try {
 			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, start);
-			pstmt.setString(2, end);
+			pstmt.setString(1, startTime);
+			pstmt.setString(2, endTime);
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -134,28 +147,6 @@ public class OrderService {
 		
 		return orders;
 	}
-
-	// public boolean deleteHead(Head head) throws Exception {
-	// boolean bool = false;
-	// String sql = "DELETE FROM `head` WHERE `hid` = ?;";
-	//
-	// try {
-	// pstmt = conn.prepareStatement(sql);
-	// pstmt.setInt(1, head.getHid());
-	//
-	// if (pstmt.executeUpdate() > 0) {
-	// bool = true;
-	// System.out.println("Delete head successfully");
-	// } else {
-	// System.out.println("Delete head unsuccessfully");
-	// }
-	//
-	// } catch (Exception e) {
-	// throw e;
-	// }
-	//
-	// return bool;
-	// }
 
 	public void closeConn() throws Exception {
 		try {
