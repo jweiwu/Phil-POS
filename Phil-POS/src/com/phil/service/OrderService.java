@@ -126,7 +126,7 @@ public class OrderService {
 		List<Order> orders = new ArrayList<Order>();
 		
 		try {
-			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ?";
+			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ? ORDER BY `createtime` DESC";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, startTime);
 			pstmt.setString(2, endTime);
