@@ -106,7 +106,7 @@ function RemoverAllOrder(){
 		var result;
 		
 		    $.ajax({
-		        url: 'orderList',
+		        url: 'showMenu',
 		        type: 'get',
 		        dataType: 'json',
 		        async: false,

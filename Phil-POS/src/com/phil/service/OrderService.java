@@ -12,6 +12,7 @@ import java.util.List;
 import com.phil.model.CustomList;
 import com.phil.model.Order;
 import com.phil.model.OrderList;
+import com.phil.viewmodel.ShowOrderList;
 import com.phil.viewmodel.ViewOrder;
 
 public class OrderService {
@@ -59,7 +60,7 @@ public class OrderService {
 							pstmt.setLong(1, order.getOid());
 							pstmt.setInt(2, orderList.get(i).getMid());
 							pstmt.setInt(3, orderList.get(i).getQuantity());
-							
+
 							pstmt.addBatch();
 						}
 					}
@@ -109,7 +110,7 @@ public class OrderService {
 		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String startTime = sdFormat.format(date) + " 00:00:00";
 		String endTime = sdFormat.format(date) + " 23:59:59";
-		
+
 		return getDayOrders(startTime, endTime);
 	}
 
@@ -118,21 +119,21 @@ public class OrderService {
 		Date date = sdFormat.parse(order.getCreatetime());
 		String startTime = sdFormat.format(date) + " 00:00:00";
 		String endTime = sdFormat.format(date) + " 23:59:59";
-		
+
 		return getDayOrders(startTime, endTime);
 	}
-	
+
 	private List<Order> getDayOrders(String startTime, String endTime) throws Exception {
 		List<Order> orders = new ArrayList<Order>();
-		
+
 		try {
 			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ? ORDER BY `createtime` DESC";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, startTime);
 			pstmt.setString(2, endTime);
 			ResultSet rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Order order = new Order();
 				order.setOid(rs.getLong("oid"));
 				order.setDiscount(rs.getInt("discount"));
@@ -140,12 +141,37 @@ public class OrderService {
 				order.setCreatetime(rs.getString("createtime"));
 				orders.add(order);
 			}
-			
+
 		} catch (Exception e) {
 			throw e;
 		}
-		
+
 		return orders;
+	}
+
+	public List<ShowOrderList> ShowOrderLists(Order order) throws Exception {
+		List<ShowOrderList> showOrderLists = new ArrayList<ShowOrderList>();
+
+		try {
+			String sql = "SELECT * FROM `orderlist` JOIN `meal` USING(`mid`) WHERE oid = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, order.getOid());
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ShowOrderList showOrderList = new ShowOrderList();
+				showOrderList.setOid(rs.getLong("oid"));
+				showOrderList.setMid(rs.getInt("mid"));
+				showOrderList.setMeal(rs.getString("meal"));
+				showOrderList.setPrice(rs.getInt("price"));
+				showOrderList.setQuantity(rs.getInt("quantity"));
+				showOrderLists.add(showOrderList);
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return showOrderLists;
 	}
 
 	public void closeConn() throws Exception {
@@ -160,5 +186,4 @@ public class OrderService {
 			throw e;
 		}
 	}
-
 }

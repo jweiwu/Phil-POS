@@ -13,7 +13,7 @@
             <result name="success">Welcome.jsp</result>
             <result name="error">Login.jsp</result>
         </action>
-        <action name="orderList" class="com.phil.action.OrderAction" method="execute">
+        <action name="showMenu" class="com.phil.action.OrderAction" method="execute">
             <result type="json" name="success">
             	<param name="root">dataMap</param>
             </result>
@@ -29,6 +29,12 @@
 		</action>
         <action name="dayOrders" class="com.phil.action.OdrInfoAction" method="getDayOrders">
 			<result name="success">ShowOrders.jsp</result>
+            <result name="error">Login.jsp</result>
+		</action>
+        <action name="orderLists" class="com.phil.action.OdrInfoAction" method="getOrderLists">
+			<result type="json" name="success">
+            	<param name="root">dataMap</param>
+            </result>
             <result name="error">Login.jsp</result>
 		</action>
     </package>
