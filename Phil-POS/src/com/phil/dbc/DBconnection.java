@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBconnection {
-	private static String url = "jdbc:mysql://140.125.84.71:3306/phil?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
-	private static String user = "phil";
-	private static String pass = "1qaz2wsx";
+	private static String url = "jdbc:mysql://localhost:3306/phil?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=false";
+	private static String user = "jwei";
+	private static String pass = "dir/+5397";
 	private Connection conn = null;
 
 	public DBconnection() throws Exception {
