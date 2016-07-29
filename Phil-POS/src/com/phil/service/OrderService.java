@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import com.phil.model.CustomList;
 import com.phil.model.Order;
 import com.phil.model.OrderList;
+import com.phil.viewmodel.OverallInfo;
 import com.phil.viewmodel.ShowOrderList;
 import com.phil.viewmodel.ViewOrder;
 
@@ -172,6 +174,51 @@ public class OrderService {
 		}
 
 		return showOrderLists;
+	}
+
+	public OverallInfo getOverallInfo(int year, int month) throws Exception {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar calendar = Calendar.getInstance();
+
+		calendar.set(year, month - 1, 1);
+		String start = sdf.format(calendar.getTime());
+
+		calendar.add(Calendar.MONTH, +1);
+		calendar.add(Calendar.DATE, -1);
+		String end = sdf.format(calendar.getTime());
+
+		return overallInfo(start, end);
+	}
+
+	public OverallInfo getOverallInfo(int year, int month, int day) throws Exception {
+		String date = year + "-" + month + "-" + day;
+		String start = date + " 00:00:00";
+		String end = date + " 23:59:59";
+
+		return overallInfo(start, end);
+	}
+
+	public OverallInfo overallInfo(String start, String end) throws Exception {
+		OverallInfo overallInfo = new OverallInfo();
+//		System.out.println(start);
+//		System.out.println(end);
+		try {
+			String sql = "SELECT SUM(`total`) AS `total`, SUM(`discount`) AS `discount` FROM `order` WHERE `createtime` BETWEEN ? AND ?;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, start);
+			pstmt.setString(2, end);
+			ResultSet rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				overallInfo.setTotal(rs.getInt("total"));
+				overallInfo.setDiscount(rs.getInt("discount"));
+			}
+
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return overallInfo;
 	}
 
 	public void closeConn() throws Exception {

@@ -39,7 +39,7 @@
 		</action>
     </package>
     
-    <package name="boss" extends="struts-default" namespace="/boss">
+    <package name="boss" extends="json-default" namespace="/boss">
     <!-- 攔截器宣告範例 -->
     <!-- 
     	<interceptors>
@@ -83,5 +83,17 @@
     		<result type="redirect" name="success">/boss/customs</result>
     		<result type="redirect" name="error">/login</result>
     	</action>
+		<action name="dailyAcc" class="com.phil.action.OdrInfoAction" method="getDailyAcc">
+			<result type="json" name="success">
+            	<param name="root">dataMap</param>
+            </result>
+            <result name="error">/login</result>
+		</action>
+		<action name="monthlyAcc" class="com.phil.action.OdrInfoAction" method="getMonthlyAcc">
+			<result type="json" name="success">
+            	<param name="root">dataMap</param>
+            </result>
+            <result name="error">/login</result>
+		</action>
     </package>
 </struts>
