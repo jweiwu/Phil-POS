@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import com.phil.model.Order;
 import com.phil.model.OrderList;
 import com.phil.viewmodel.OverallInfo;
 import com.phil.viewmodel.ShowOrderList;
+import com.phil.viewmodel.ViewMeal;
 import com.phil.viewmodel.ViewOrder;
 
 public class OrderService {
@@ -177,15 +177,9 @@ public class OrderService {
 	}
 
 	public OverallInfo getOverallInfo(int year, int month) throws Exception {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar calendar = Calendar.getInstance();
-
-		calendar.set(year, month - 1, 1);
-		String start = sdf.format(calendar.getTime());
-
-		calendar.add(Calendar.MONTH, +1);
-		calendar.add(Calendar.DATE, -1);
-		String end = sdf.format(calendar.getTime());
+		DateTimeUtil dtu = new DateTimeUtil();
+		String start = dtu.getFistdayOfMonth(year, month);
+		String end = dtu.getLastdayOfMonth(year, month);
 
 		return overallInfo(start, end);
 	}
@@ -200,8 +194,7 @@ public class OrderService {
 
 	public OverallInfo overallInfo(String start, String end) throws Exception {
 		OverallInfo overallInfo = new OverallInfo();
-//		System.out.println(start);
-//		System.out.println(end);
+
 		try {
 			String sql = "SELECT SUM(`total`) AS `total`, SUM(`discount`) AS `discount` FROM `order` WHERE `createtime` BETWEEN ? AND ?;";
 			pstmt = conn.prepareStatement(sql);
@@ -219,6 +212,50 @@ public class OrderService {
 		}
 
 		return overallInfo;
+	}
+
+	public List<ViewMeal> getDetailInfo(int year, int month) throws Exception {
+		DateTimeUtil dtu = new DateTimeUtil();
+		String start = dtu.getFistdayOfMonth(year, month);
+		String end = dtu.getLastdayOfMonth(year, month);
+
+		return DetailInfo(start, end);
+	}
+
+	public List<ViewMeal> getDetailInfo(int year, int month, int day) throws Exception {
+		String date = year + "-" + month + "-" + day;
+		String start = date + " 00:00:00";
+		String end = date + " 23:59:59";
+
+		return DetailInfo(start, end);
+	}
+
+	public List<ViewMeal> DetailInfo(String start, String end) throws Exception {
+		List<ViewMeal> viewMeals = new ArrayList<ViewMeal>();
+
+		try {
+			String sql = "SELECT `mid`, `meal`, SUM(`quantity`) AS `number`, SUM(`price`*`quantity`) AS `amount`"
+					+ "FROM `order` AS `o` JOIN `orderlist` USING(`oid`) JOIN `meal` USING(`mid`)"
+					+ "WHERE `o`.`createtime` BETWEEN ? AND ? GROUP BY `mid`;";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, start);
+			pstmt.setString(2, end);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ViewMeal viewMeal = new ViewMeal();
+				viewMeal.setMid(rs.getInt("mid"));
+				viewMeal.setMeal(rs.getString("meal"));
+				viewMeal.setNumber(rs.getInt("number"));
+				viewMeal.setAmount(rs.getInt("amount"));
+				viewMeals.add(viewMeal);
+			}
+
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return viewMeals;
 	}
 
 	public void closeConn() throws Exception {

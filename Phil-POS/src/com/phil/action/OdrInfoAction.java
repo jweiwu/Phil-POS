@@ -104,7 +104,9 @@ public class OdrInfoAction extends ActionSupport implements ModelDriven<Order>, 
 
 		try {
 			setOverallInfo(orderService.getOverallInfo(year, month, day));
+			setViewMeals(orderService.getDetailInfo(year, month, day));
 			dataMap.put("overall", getOverallInfo());
+			dataMap.put("detail", getViewMeals());
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,7 +126,9 @@ public class OdrInfoAction extends ActionSupport implements ModelDriven<Order>, 
 
 		try {
 			setOverallInfo(orderService.getOverallInfo(year, month));
+			setViewMeals(orderService.getDetailInfo(year, month));
 			dataMap.put("overall", getOverallInfo());
+			dataMap.put("detail", getViewMeals());
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
