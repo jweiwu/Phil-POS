@@ -23,7 +23,10 @@
 	<filter-mapping>
 		<filter-name>Login</filter-name>
 		<url-pattern>/Welcome.jsp</url-pattern>
+		<url-pattern>/showMenu</url-pattern>
 		<url-pattern>/order.html</url-pattern>
+		<url-pattern>/insertOrder</url-pattern>
+		<url-pattern>/deleteOrder</url-pattern>
 		<url-pattern>/ShowOrders.jsp</url-pattern>
 		<url-pattern>/showOrder</url-pattern>
 		<url-pattern>/todayOrders</url-pattern>

@@ -89,6 +89,29 @@ public class OrderAction extends ActionSupport implements ModelDriven<ViewOrder>
 		}
 	}
 	
+	public String delete() {
+		OrderService orderService = new OrderService(dbc.getConnection());
+		
+		try {
+			if (orderService.deleteOrder(viewOrder.getOrder())) {
+				dataMap.put("state", "SUCCESS");
+				return SUCCESS;
+			} else {
+				return ERROR;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		} finally {
+			try {
+				orderService.closeConn();
+				dbc.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public Order getOrder() {
 		return order;
 	}

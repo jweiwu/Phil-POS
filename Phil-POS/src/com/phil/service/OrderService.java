@@ -107,6 +107,27 @@ public class OrderService {
 		return bool;
 	}
 
+	public boolean deleteOrder(Order order) throws Exception {
+		boolean bool = false;
+		String sql = "DELETE FROM `order` WHERE `oid` = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, order.getOid());
+			
+			if (pstmt.executeUpdate() > 0) {
+				System.out.println("Delete order successfully");
+				bool = true;
+			} else {
+				System.out.println("Delete order unsuccessfully");
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return bool;
+	}
+
 	public List<Order> TodayOrders() throws Exception {
 		Date date = new Date();
 		SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");

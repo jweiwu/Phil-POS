@@ -23,6 +23,12 @@
 			<result type="redirect" name="success">order.html</result>
             <result name="error">Login.jsp</result>
 		</action>
+        <action name="deleteOrder" class="com.phil.action.OrderAction" method="delete">
+			<result type="json" name="success">
+            	<param name="root">dataMap</param>
+            </result>
+            <result name="error">Login.jsp</result>
+		</action>
         <action name="todayOrders" class="com.phil.action.OdrInfoAction" method="getTodayOrders">
 			<result name="success">ShowOrders.jsp</result>
             <result name="error">Login.jsp</result>
