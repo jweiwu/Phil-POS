@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,21 +13,28 @@
 <body>
 <div class="main-wrap">
 	<header class="main-header">
-			<!-- <h1>翴繺╰参</h1> -->
-			<span>翴繺╰参</span>
+			<!-- <h1>榛為绯荤当</h1> -->
+			<span>榛為绯荤当</span>
 			<span>
 			<a href="todayOrders"><span class="glyphicon glyphicon-list-alt"></span></a>
 			<a href="boss/head.html"><span class="glyphicon glyphicon-home"></span></a>
 			</span>
 	</header>
 	<div class="container" style="text-align: center;">
-				<h1>璹虫戈癟</h1>
+	
+				<h1>瑷傚柈璩囪▕</h1>
+				
+				<form action="dayOrders" method="get">
+					Date: <input type="date" name="createtime">
+					<input type="submit">
+				</form>
+				
 				<table class="rwd-table">
 				  <tr>
-				    <th>絪腹</th>
-				    <th>чΙ</th>
-				    <th>肂</th>
-				    <th>丁</th>
+				    <th>绶ㄨ櫉</th>
+				    <th>鎶樻墸</th>
+				    <th>閲戦</th>
+				    <th>鏅傞枔</th>
 				  </tr>
 				  <s:iterator value="orders">
 				  <tr>
@@ -48,6 +55,6 @@
 	<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
 	<script type="text/javascript" src="template/Nav.template.js"></script>	
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-		
+
 </body>
 </html>
