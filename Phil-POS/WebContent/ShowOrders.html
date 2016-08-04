@@ -19,6 +19,11 @@
 	</header>
 	<div class="container" style="text-align: center;">
 				<h1>訂單資訊</h1>
+
+				<form action="dayOrders" method="get">
+					Date: <input type="date" name="createtime">
+					<input type="submit">
+				</form>
 				<table class="rwd-table">
 				  <tr>
 				    <th>訂單編號</th>
@@ -27,16 +32,33 @@
 				    <th>時間</th>
 				  </tr>
 				  <tr>
-				    <td data-th="Movie Title"><button class="test2" value="30">30</button></td>
+				    <td data-th="Movie Title"><button class="order-detail btn" value="30">30</button></td>
 				    <td data-th="Genre">30</td>
 				    <td data-th="Year">560</td>
 				    <td data-th="Gross">2016-07-23</td>
 				  </tr>
-			
-				 
 				</table>
+
+				<div id="detail-view">
+					
+				</div>
 				
+		
+			<div class="pop">
+				  <span>✖</span>
+				  <h1>餐點明細</h1>
+				  <table class="table" style="font-size: 24px;">
+				  <tr>
+				    <th>餐點名稱</th>
+				    <th>數量</th>
+				    <th>金額</th>
+				
+
+				</table>
+
+			</div>
 	</div>
+
 </div>
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>		
 	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>	
