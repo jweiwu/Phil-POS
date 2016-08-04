@@ -21,7 +21,6 @@
 			</span>
 	</header>
 	<div class="container" style="text-align: center;">
-	
 				<h1>訂單資訊</h1>
 				
 				<form action="dayOrders" method="get">
@@ -31,26 +30,39 @@
 				
 				<table class="rwd-table">
 				  <tr>
-				    <th>編號</th>
+				    <th>#</th>
 				    <th>折扣</th>
 				    <th>金額</th>
 				    <th>時間</th>
 				  </tr>
 				  <s:iterator value="orders">
 				  <tr>
-				    <td data-th="oid"><s:property value="oid" /></td>
-				    <td data-th="discount"><s:property value="discount" /></td>
-				    <td data-th="total"><s:property value="total" /></td>
-				    <td data-th="createtime"><s:property value="createtime" /></td>
+				    <td><button class="order-detail btn" value="<s:property value="oid" />">i</button></td>
+				    <td><s:property value="discount" /></td>
+				    <td><s:property value="total" /></td>
+				    <td><s:property value="createtime" /></td>
 				  </tr>
 				  </s:iterator>
 				</table>
+				
+				<div class="pop">
+				  <span>✖</span>
+				  <h1>餐點明細</h1>
+				  <table class="table" style="font-size: 24px;">
+				    <tr>
+				      <th>餐點名稱</th>
+				      <th>數量</th>
+				      <th>金額</th>
+				  </table>
+
+				</div>
+				
 				
 	</div>
 </div>
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>		
 	<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>	
-	<script type="text/javascript" src="js/order.js"></script>	
+	<script type="text/javascript" src="js/showorder.js"></script>	
 	<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
 	<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>	
 	<script type="text/javascript" src="template/Nav.template.js"></script>	

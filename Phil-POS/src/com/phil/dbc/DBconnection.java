@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBconnection {
-	private static String url = "jdbc:mysql://localhost:3306/phil?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=false";
+	private static String url = "jdbc:mysql://52.42.126.60:3306/phil?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=false";
 	private static String user = "jwei";
 	private static String pass = "dir/+5397";
 	private Connection conn = null;
