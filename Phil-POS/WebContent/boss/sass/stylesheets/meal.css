@@ -389,12 +389,6 @@ header .megaMenu li:hover {
 }
 
 /****Layout****/
-/* line 339, ../sass/meal.scss */
-.main-container {
-  height: 100vh;
-  background-color: #f2f2f2;
-}
-
 /* line 343, ../sass/meal.scss */
 .item-view {
   width: 100%;

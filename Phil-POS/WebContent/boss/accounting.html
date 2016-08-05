@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Head Management - Phil POS</title>
+			
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="sass/stylesheets/meal.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+	</head>
+	<body>
+
+<!-- Navbar -->
+		
+	<header id="nav-template"></header>
+<!-- End of Navbar-->
+
+
+<!-- main content -->
+
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="item-view">
+						<div class="title"><h1>營收</h1></div>	
+							<div style="padding:20px;">
+							<table class="table">
+								<thead>
+									
+										<tr>
+											<th>總額</th>
+											<th>折扣</th>
+											<th>總收入</th>	
+										</tr>
+									
+								</thead>
+								<tbody>
+									
+										<tr id="account-detail">
+											
+										</tr>
+									
+								</tbody>
+							</table>
+							</div>			
+						<!-- 類別輸出表 -->
+							<div class="table-box">
+						
+								<div class="table-wrap">
+									<table id="table_id" class="display">
+									    <thead>
+									        <tr>
+									            <th>餐點細項</th>
+									            <th>數量</th>
+									            <th>金額</th>
+									        </tr>
+									    </thead>
+									    <tbody id="total-detail">
+
+									    </tbody>
+									</table>
+								</div>
+							</div>
+					<!-- End of 類別輸出表 -->
+							
+					</div>
+				
+
+					</div>
+				</div>
+			</div>
+
+		<!-- 類別輸入欄 -->
+		<div id="popup1" class="overlay">
+				<div class="popup">
+					<h2>請輸入類別名稱</h2>
+					<a href="#" class="close">&times;</a>
+					<div class="content">
+						<s:form action="insertHead" method="post" namespace="/boss">
+						<input type="text" name="item">
+						<input type="submit" value="確認">
+						</s:form>
+					</div>
+			</div>
+		</div>
+		<!-- End of 類別輸入欄 -->
+<!-- Enf of content -->
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>			
+		<script type="text/javascript" src="js/head.js"></script>	
+		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+		<script type="text/javascript" src="template/Nav.template.js"></script>	
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	
+	</body>
+</html>
