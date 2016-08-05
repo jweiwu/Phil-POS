@@ -109,11 +109,16 @@ public class OrderService {
 
 	public boolean deleteOrder(Order order) throws Exception {
 		boolean bool = false;
-		String sql = "DELETE FROM `order` WHERE `oid` = ?";
+		String sql = "UPDATE `order` SET `delete` = '1', deletetime = ? WHERE `oid` = ?";
 
 		try {
+			Date now = new Date();
+			SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String deletetime = sdFormat.format(now);
+			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, order.getOid());
+			pstmt.setString(1, deletetime);
+			pstmt.setLong(2, order.getOid());
 			
 			if (pstmt.executeUpdate() > 0) {
 				System.out.println("Delete order successfully");
@@ -150,7 +155,7 @@ public class OrderService {
 		List<Order> orders = new ArrayList<Order>();
 
 		try {
-			String sql = "SELECT * FROM `order` WHERE `createtime` BETWEEN ? AND ? ORDER BY `createtime` DESC";
+			String sql = "SELECT * FROM `order` WHERE `delete` = '0' AND `createtime` BETWEEN ? AND ? ORDER BY `createtime` DESC";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, startTime);
 			pstmt.setString(2, endTime);
@@ -217,7 +222,7 @@ public class OrderService {
 		OverallInfo overallInfo = new OverallInfo();
 
 		try {
-			String sql = "SELECT SUM(`total`) AS `total`, SUM(`discount`) AS `discount` FROM `order` WHERE `createtime` BETWEEN ? AND ?;";
+			String sql = "SELECT SUM(`total`) AS `total`, SUM(`discount`) AS `discount` FROM `order` WHERE `delete` = '0' AND `createtime` BETWEEN ? AND ?;";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, start);
 			pstmt.setString(2, end);
@@ -257,7 +262,7 @@ public class OrderService {
 		try {
 			String sql = "SELECT `mid`, `meal`, SUM(`quantity`) AS `number`, SUM(`price`*`quantity`) AS `amount`"
 					+ "FROM `order` AS `o` JOIN `orderlist` USING(`oid`) JOIN `meal` USING(`mid`)"
-					+ "WHERE `o`.`createtime` BETWEEN ? AND ? GROUP BY `mid`;";
+					+ "WHERE `o`.`delete` = '0' AND `o`.`createtime` BETWEEN ? AND ? GROUP BY `mid`;";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, start);
 			pstmt.setString(2, end);
