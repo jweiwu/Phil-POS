@@ -16,8 +16,10 @@
 			<!-- <h1>點餐系統</h1> -->
 			<span>點餐系統</span>
 			<span>
+			<!-- 
 			<a href="todayOrders"><span class="glyphicon glyphicon-list-alt"></span></a>
-			<a href="boss/head.html"><span class="glyphicon glyphicon-home"></span></a>
+			 -->
+			<a href="order.html"><span class="glyphicon glyphicon-home"></span></a>
 			</span>
 	</header>
 	<div class="container" style="text-align: center;">

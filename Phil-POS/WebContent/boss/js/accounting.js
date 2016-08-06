@@ -14,6 +14,7 @@ $(document).ready( function () {
     var day = 1;
 
     $('.daypick').on('click',function(){
+//    	$('#account-detail td').remove();
 		var m = $("#date").val().split("-",3);;
 		
 	 
@@ -24,8 +25,8 @@ $(document).ready( function () {
 		year = m[0];
 		month =m[1];
 		day = m[2];
-
-		 getAccData(year, month, day);
+		
+		getAccData(year, month, day);
 	
 	});
     
@@ -69,6 +70,7 @@ function getAccData() {
 }
 
 function buildAccTable(totalData) {
+	$('#total-detail td').remove();
 	var detail_length = totalData.detail.length;
 	var total = 0;
 	for(let i = 0 ; i < detail_length ;i++){
