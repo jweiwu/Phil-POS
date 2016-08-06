@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Accounting - Phil POS</title>
+			
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="sass/stylesheets/meal.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+
+
+	</head>
+	<body>
+
+<!-- Navbar -->
+			<header>
+		<nav>
+			<button id="togg_menu">
+			<span class="bars"></span>
+			<span class="bars"></span>
+			<span class="bars"></span>
+			</button>
+
+			<ul class="megaMenu">
+
+				<li class="title"><h1>Menu</h1></li>
+				<li class="stuff"><a href="../order.html">點餐</a></li>
+				<li class="stuff"><a href="meals">新增餐點</a></li>
+				<li class="stuff"><a href="heads">新增類別</a></li>
+				<li class="stuff"><a href="accounting.html">營收</a></li>
+			</ul>
+		</nav>
+		
+	</header>
+
+<!-- End of Navbar-->
+
+
+<!-- main content -->
+
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="item-view">
+						<div class="title"><h1>營收</h1></div>
+						<div style="padding:20px 0 0 20px;">
+							<h4 style="padding-bottom:5px;">請選擇年月份</h4>
+							<input type="text">
+							
+							<select class="select-style">
+							  <option>1</option>
+							  <option>2</option>
+							  <option>3</option>
+							  <option>4</option>
+							  <option>5</option>
+							  <option>6</option>
+							  <option>7</option>
+							  <option>8</option>
+							  <option>9</option>
+							  <option>10</option>
+							  <option>11</option>
+							  <option>12</option>
+							</select>
+							
+							<button class="daypick btn btn-success">確認</button>
+							</div>	
+							<div style="padding:20px;">
+							<table class="table">
+								<thead>
+									
+										<tr>
+											<th>總額</th>
+											<th>折扣</th>
+											<th>總收入</th>	
+										</tr>
+									
+								</thead>
+								<tbody>
+									
+										<tr id="account-detail">
+											
+										</tr>
+									
+								</tbody>
+							</table>
+							</div>			
+						<!-- 類別輸出表 -->
+							<div class="table-box">
+						
+								<div class="table-wrap">
+									<table id="table_id" class="display">
+									    <thead>
+									        <tr>
+									            <th>餐點細項</th>
+									            <th>數量</th>
+									            <th>金額</th>
+									        </tr>
+									    </thead>
+									    <tbody id="total-detail">
+											
+									    </tbody>
+									</table>
+								</div>
+							</div>
+					<!-- End of 類別輸出表 -->
+							
+					</div>
+				
+
+					</div>
+				</div>
+			</div>
+
+<!-- Enf of content -->
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>			
+		<script type="text/javascript" src="js/accounting.js"></script>	
+		<script type="text/javascript" src="js/handlebars.runtime-v4.0.5.js"></script>	
+		<script type="text/javascript" src="template/Nav.template.js"></script>	
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	
+	</body>
+</html>
