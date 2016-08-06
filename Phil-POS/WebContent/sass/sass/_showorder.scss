@@ -8,7 +8,14 @@ $breakpoint-alpha: 480px; // adjust to your needs
   margin: 0 auto;
   margin-top: 50px;
   min-width: 900px; // adjust to your needs
-  
+  //button
+  .order-detail{
+      width: 80px;
+      height: 40px;
+      background-color:   #00CED1;
+      font-size: 22px;
+      color: #FFF;
+  }
   tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -137,3 +144,11 @@ h1 {
   height: 30px;
   font-size: 20px;
 }
+
+
+
+
+
+
+
+

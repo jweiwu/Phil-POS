@@ -161,17 +161,6 @@ header {
 }
 /* line 118, ../sass/meal.scss */
 header .megaMenu {
-  transform: translateX(-270px);
-  -ms-transform: translateX(-270px);
-  -o-transform: translateX(-270px);
-  -webkit-transform: translateX(-270px);
-  -moz-transform: translateX(-270px);
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  list-style-type: none;
   padding: 0;
   margin: 0;
   top: 0;
@@ -216,11 +205,6 @@ header .megaMenu li a {
   width: 90%;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
 }
 /* line 167, ../sass/meal.scss */
 header .megaMenu li a:hover {

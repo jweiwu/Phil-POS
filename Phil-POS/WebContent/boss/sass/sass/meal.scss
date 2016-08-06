@@ -116,9 +116,9 @@ header{
   
 
   .megaMenu{
-    @include transform(translateX(-270px));
-    @include transition(all 0.3s ease-in-out);
-    list-style-type: none;
+    // @include transform(translateX(-270px));
+    // @include transition(all 0.3s ease-in-out);
+    // list-style-type: none;
     padding: 0;
     margin: 0;
     top: 0;
@@ -162,7 +162,7 @@ header{
       width: 90%;
       text-decoration:none;
       display:inline-block;
-      @include transition(all 0.3s ease-in-out);
+      // @include transition(all 0.3s ease-in-out);
       
       &:hover{
         color:$ggr;
