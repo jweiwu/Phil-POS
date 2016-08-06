@@ -15,7 +15,7 @@
 
 <!-- Navbar -->
 		
-	<header>
+			<header>
 		<nav>
 			<button id="togg_menu">
 			<span class="bars"></span>
@@ -26,7 +26,7 @@
 			<ul class="megaMenu">
 
 				<li class="title"><h1>Menu</h1></li>
-				<li class="stuff"><a href="WebContent/order.html">點餐</a></li>
+				<li class="stuff"><a href="../order.html">點餐</a></li>
 				<li class="stuff"><a href="meals">新增餐點</a></li>
 				<li class="stuff"><a href="heads">新增類別</a></li>
 				<li class="stuff"><a href="accounting.html">營收</a></li>
