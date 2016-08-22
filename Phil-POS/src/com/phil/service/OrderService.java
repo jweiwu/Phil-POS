@@ -58,7 +58,7 @@ public class OrderService {
 					conn.setAutoCommit(false);
 
 					for (int i = 0; i < orderList.size(); i++) {
-						if (orderList.get(i) != null) {
+						if (orderList.get(i) != null && orderList.get(i).getMid() != 0) {
 							pstmt.setLong(1, order.getOid());
 							pstmt.setInt(2, orderList.get(i).getMid());
 							pstmt.setInt(3, orderList.get(i).getQuantity());
@@ -69,7 +69,7 @@ public class OrderService {
 
 					if (customList != null) {
 						for (int i = 0; i < customList.size(); i++) {
-							if (customList.get(i) != null) {
+							if (customList.get(i) != null && customList.get(i).getCid() != 0) {
 								pstmt2.setLong(1, order.getOid());
 								pstmt2.setInt(2, customList.get(i).getMid());
 								pstmt2.setInt(3, customList.get(i).getCid());
