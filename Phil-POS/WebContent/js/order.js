@@ -1,5 +1,5 @@
 
-//var result = {"heads":[{"createtime":"2016-04-30 21:02:12.0","hid":1,"item":"漢堡"},{"createtime":"2016-04-30 21:05:35.0","hid":2,"item":"飲料"},{"createtime":"2016-05-11 14:19:23.0","hid":9,"item":"點心"}],"meals":[{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"雞排漢堡","mid":8,"price":110},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"牛肉漢堡","mid":6,"price":20},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"豬肉漢堡","mid":7,"price":100},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"可口可樂","mid":9,"price":30},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"雪碧","mid":10,"price":30},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"薯條","mid":11,"price":20},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"雞塊","mid":12,"price":25}]};
+// var result = {"heads":[{"createtime":"2016-04-30 21:02:12.0","hid":1,"item":"漢堡"},{"createtime":"2016-04-30 21:05:35.0","hid":2,"item":"飲料"},{"createtime":"2016-05-11 14:19:23.0","hid":9,"item":"點心"}],"meals":[{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"雞排漢堡","mid":8,"price":110},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"牛肉漢堡","mid":6,"price":20},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"豬肉漢堡","mid":7,"price":100},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"可口可樂","mid":9,"price":30},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"雪碧","mid":10,"price":30},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"薯條","mid":11,"price":20},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"雞塊","mid":12,"price":25}]};
 var result;
 
 
@@ -12,7 +12,6 @@ var allprice = 0;	//總共的金額
 function cleanOrderList(){
 	orderList.length = 0;
 }
-
 
 
 // Show Headname
@@ -59,7 +58,10 @@ function RemoverAllOrder(){
 		var myid = parseInt(menuItem.id); //抓到個別餐點訂單的ID編號
 
 		orderList[myid].order = false;
+		orderList[myid].mid = null;
 		menuItem.remove();
+
+		
 	}
 
 // 數量加減
@@ -102,39 +104,40 @@ function RemoverAllOrder(){
 	 * Import order list.
 	 * 
 	 */
-	function getMenu() {
-		var result;
+	// function getMenu() {
+	// 	var result;
 		
-		    $.ajax({
-		        url: 'showMenu',
-		        type: 'get',
-		        dataType: 'json',
-		        async: false,
-		        success: function (data) {
-		            result = data;
-		        }
-		    });
+	// 	    $.ajax({
+	// 	        url: 'showMenu',
+	// 	        type: 'get',
+	// 	        dataType: 'json',
+	// 	        async: false,
+	// 	        success: function (data) {
+	// 	            result = data;
+	// 	        }
+	// 	    });
 		    
-		return result;
-	}
+	// 	return result;
+	// }
 	
 	
 //get ID 
 var jsTest = document.getElementById('js-test');
 var allpriceNum = document.getElementById('allpriceNum');
-
 $(document).ready(function(){
-	result = getMenu();
+	 result = {"heads":[{"createtime":"2016-04-30 21:02:12.0","hid":1,"item":"漢堡"},{"createtime":"2016-04-30 21:05:35.0","hid":2,"item":"飲料"},{"createtime":"2016-05-11 14:19:23.0","hid":9,"item":"點心"}],"meals":[{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"雞排漢堡","mid":8,"price":110},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"牛肉漢堡","mid":6,"price":20},{"active":1,"discount":1.0,"head":"漢堡","hid":1,"meal":"豬肉漢堡","mid":7,"price":100},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"可口可樂","mid":9,"price":30},{"active":1,"discount":1.0,"head":"飲料","hid":2,"meal":"雪碧","mid":10,"price":30},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"薯條","mid":11,"price":20},{"active":1,"discount":1.0,"head":"點心","hid":9,"meal":"雞塊","mid":12,"price":25}]};
+	// result = getMenu();
 	showHead();
 
 	 // 操作DOM
 	$('.item button').on('click',ShowMeal);
 	$('#order-main-wrap').on('click','.meal-item',ShowOrder);
-	$('.order-view').on('click','.glyphicon-trash',RemoveOrder);//clean all item
+	$('#js-order-view').on('click','.glyphicon-trash',RemoveOrder);//clean all item
 	$('#js-clean-button').on('click',RemoverAllOrder);
 	$('.order-view').on('click','.js-plus',increase);
 	$('.order-view').on('click','.js-minus',decrease);
 	
+
 	jsTest.addEventListener('click',function(){
 			$('#js-total').val(allprice);
 			event.preventDefault();
@@ -168,6 +171,10 @@ $(document).ready(function(){
 	function exportOrderList(Num){
 		this.itemIdNum = Num;
 		for(i = 1; i<=itemIdNum ;i++){
+
+			if (orderList[i].mid == null){
+				continue;
+			}
 			v = i -1
 			orderList[i].name = "orderList["+v+"].mid";
 			orderList[i].name2 = "orderList["+v+"].quantity";
