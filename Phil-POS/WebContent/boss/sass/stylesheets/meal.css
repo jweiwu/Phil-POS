@@ -145,6 +145,14 @@ span.bars {
   margin-top: 13px;
   margin-left: 10px;
 }
+/* line 108, ../sass/meal.scss */
+#togg_menu:focus ~ .megaMenu {
+  transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+}
 
 /* line 113, ../sass/meal.scss */
 header {
@@ -153,16 +161,33 @@ header {
 }
 /* line 118, ../sass/meal.scss */
 header .megaMenu {
+  transform: translateX(-270px);
+  -ms-transform: translateX(-270px);
+  -o-transform: translateX(-270px);
+  -webkit-transform: translateX(-270px);
+  -moz-transform: translateX(-270px);
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  list-style-type: none;
   padding: 0;
   margin: 0;
   top: 0;
   left: 0;
+  background-color: #231f20;
   position: fixed;
   width: 250px;
   height: 100%;
   padding-top: 50px;
   z-index: 100;
   border-radius: 2px solid #ddd;
+  box-shadow: 2px 2px 80px 3px #000;
+  -ms-box-shadow: 2px 2px 80px 3px #000;
+  -o-box-shadow: 2px 2px 80px 3px #000;
+  -webkit-box-shadow: 2px 2px 80px 3px #000;
+  -moz-box-shadow: 2px 2px 80px 3px #000;
 }
 /* line 135, ../sass/meal.scss */
 header .megaMenu ul {
@@ -175,6 +200,7 @@ header .megaMenu li {
   padding: 15px;
   width: 100%;
   margin: 0 auto;
+  border-top: 1px solid #594f51;
 }
 /* line 143, ../sass/meal.scss */
 header .megaMenu li.title {
@@ -195,6 +221,11 @@ header .megaMenu li a {
   width: 90%;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
 }
 /* line 167, ../sass/meal.scss */
 header .megaMenu li a:hover {

@@ -93,6 +93,7 @@ body{
 			font-size: 25px;
 			margin-top: 48*0.5px;
 			margin-left: 80px;
+			color: #000;
 		}
 	}     /*End of menu-item */	
 }      /*end of order-view*/
@@ -145,10 +146,10 @@ body{
 
 	.btn{
 		margin-top: 10px;
-		margin-left: 20px;
+		// margin-left: 20px;
 		cursor: pointer;
-		font-size: 28px;
-		width: 150px;
+		font-size: 24px;
+		width: 100px;
 		height: 58px;
 	}
 
