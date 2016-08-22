@@ -42,6 +42,44 @@ body{
 
 
 
+.main-header,
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-header{
+  background-color:   #008B8B;
+
+  color: #FFF;
+  height: 68px;
+  padding: 10px;
+  justify-content: space-between;
+
+  h1{
+    font-size: 28px;
+    margin-left: 30px;
+  }
+  span{
+    color: #fff;
+    margin-right: 50px;
+    font-size: 22px;
+  }
+
+  ul li{
+    margin-right: 25px;
+    display: inline;
+
+    a{
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
 /*Overlay Menu*/
 .overlay-menu{
   background: rgba(48,68,83,0.9);
@@ -109,76 +147,6 @@ span.bars{
     @include transform(translateX(0px));
   }
 }
-
-header{
-  width: 100%;
-  height:60px;
-  
-
-  .megaMenu{
-    @include transform(translateX(-270px));
-    @include transition(all 0.3s ease-in-out);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    left: 0;
-    background-color: rgba(35, 31, 32, 1);
-    position: fixed;
-    width: 250px;
-    height: 100%;
-    padding-top: 50px;
-    z-index:100;
-    border-radius: 2px solid #ddd;
-    @include box-shadow(2px 2px 80px 3px #000); 
-  
-  ul{
-    padding: 0;
-    margin: 0;
-    
-
-  }
-
-  li{
-    &.title{
-      border-top: none;
-      h1{
-      font-weight: 100;
-      font-family:Helvetica, sans-serif;
-      color:#FFF;
-      font-size: 30px;
-    }
-    }
-    display: block;
-    padding: 15px;
-    width: 100%;
-    margin: 0 auto;
-    border-top: 1px solid lighten($black, 20%);
-    
-    a{
-      z-index:1000;
-      color:lighten($black, 20%);
-      padding: 15px 0;
-      width: 90%;
-      text-decoration:none;
-      display:inline-block;
-      @include transition(all 0.3s ease-in-out);
-      
-      &:hover{
-        color:$ggr;
-      }
-    }
-    &:hover{
-      border-ledt: 5px solid $ggr;
-    }
-  }
-}
-
-}
-
-
-
-
 
 /****End of Nav****/
 

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 5, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,45 +21,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.rvm/gems/ruby-2.1.1@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../.rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -70,8 +70,46 @@ body {
   padding: 0;
 }
 
+/* line 45, ../sass/meal.scss */
+.main-header,
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* line 51, ../sass/meal.scss */
+.main-header {
+  background-color: #008B8B;
+  color: #FFF;
+  height: 68px;
+  padding: 10px;
+  justify-content: space-between;
+}
+/* line 59, ../sass/meal.scss */
+.main-header h1 {
+  font-size: 28px;
+  margin-left: 30px;
+}
+/* line 63, ../sass/meal.scss */
+.main-header span {
+  color: #fff;
+  margin-right: 50px;
+  font-size: 22px;
+}
+/* line 69, ../sass/meal.scss */
+.main-header ul li {
+  margin-right: 25px;
+  display: inline;
+}
+/* line 73, ../sass/meal.scss */
+.main-header ul li a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
 /*Overlay Menu*/
-/* line 46, ../sass/meal.scss */
+/* line 84, ../sass/meal.scss */
 .overlay-menu {
   background: rgba(48, 68, 83, 0.9);
   color: #ffffff;
@@ -89,24 +127,24 @@ body {
   transition: all 0.5s;
 }
 
-/* line 63, ../sass/meal.scss */
+/* line 101, ../sass/meal.scss */
 .open {
   z-index: 5;
   opacity: 1;
   transform: translateY(0%);
 }
 
-/* line 69, ../sass/meal.scss */
+/* line 107, ../sass/meal.scss */
 .overlay-menu ul {
   font-size: 1.5rem;
 }
 
-/* line 72, ../sass/meal.scss */
+/* line 110, ../sass/meal.scss */
 .overlay-menu ul li {
   padding: 1rem;
 }
 
-/* line 75, ../sass/meal.scss */
+/* line 113, ../sass/meal.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -119,14 +157,14 @@ body {
   opacity: 0;
 }
 
-/* line 86, ../sass/meal.scss */
+/* line 124, ../sass/meal.scss */
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
 /****Nav****/
-/* line 92, ../sass/meal.scss */
+/* line 130, ../sass/meal.scss */
 span.bars {
   display: block;
   width: 30px;
@@ -136,7 +174,7 @@ span.bars {
   border-radius: 2px;
 }
 
-/* line 101, ../sass/meal.scss */
+/* line 139, ../sass/meal.scss */
 #togg_menu {
   border: none;
   outline: none;
@@ -145,7 +183,7 @@ span.bars {
   margin-top: 13px;
   margin-left: 10px;
 }
-/* line 108, ../sass/meal.scss */
+/* line 146, ../sass/meal.scss */
 #togg_menu:focus ~ .megaMenu {
   transform: translateX(0px);
   -ms-transform: translateX(0px);
@@ -154,91 +192,9 @@ span.bars {
   -moz-transform: translateX(0px);
 }
 
-/* line 113, ../sass/meal.scss */
-header {
-  width: 100%;
-  height: 60px;
-}
-/* line 118, ../sass/meal.scss */
-header .megaMenu {
-  transform: translateX(-270px);
-  -ms-transform: translateX(-270px);
-  -o-transform: translateX(-270px);
-  -webkit-transform: translateX(-270px);
-  -moz-transform: translateX(-270px);
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  top: 0;
-  left: 0;
-  background-color: #231f20;
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  padding-top: 50px;
-  z-index: 100;
-  border-radius: 2px solid #ddd;
-  box-shadow: 2px 2px 80px 3px #000;
-  -ms-box-shadow: 2px 2px 80px 3px #000;
-  -o-box-shadow: 2px 2px 80px 3px #000;
-  -webkit-box-shadow: 2px 2px 80px 3px #000;
-  -moz-box-shadow: 2px 2px 80px 3px #000;
-}
-/* line 135, ../sass/meal.scss */
-header .megaMenu ul {
-  padding: 0;
-  margin: 0;
-}
-/* line 142, ../sass/meal.scss */
-header .megaMenu li {
-  display: block;
-  padding: 15px;
-  width: 100%;
-  margin: 0 auto;
-  border-top: 1px solid #594f51;
-}
-/* line 143, ../sass/meal.scss */
-header .megaMenu li.title {
-  border-top: none;
-}
-/* line 145, ../sass/meal.scss */
-header .megaMenu li.title h1 {
-  font-weight: 100;
-  font-family: Helvetica, sans-serif;
-  color: #FFF;
-  font-size: 30px;
-}
-/* line 158, ../sass/meal.scss */
-header .megaMenu li a {
-  z-index: 1000;
-  color: #594f51;
-  padding: 15px 0;
-  width: 90%;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-}
-/* line 167, ../sass/meal.scss */
-header .megaMenu li a:hover {
-  color: #51e980;
-}
-/* line 171, ../sass/meal.scss */
-header .megaMenu li:hover {
-  border-ledt: 5px solid #51e980;
-}
-
 /****End of Nav****/
 /****Pop up****/
-/* line 186, ../sass/meal.scss */
+/* line 154, ../sass/meal.scss */
 .popup {
   opacity: 0.8;
   margin: 70px auto;
@@ -250,14 +206,14 @@ header .megaMenu li:hover {
   position: relative;
   transition: all 5s ease-in-out;
 }
-/* line 197, ../sass/meal.scss */
+/* line 165, ../sass/meal.scss */
 .popup h1 {
   text-align: center;
   font-size: 28px;
   color: #999;
 }
 
-/* line 204, ../sass/meal.scss */
+/* line 172, ../sass/meal.scss */
 .popup h2 {
   font-size: 20px;
   padding: 10px 0 10px 0;
@@ -266,7 +222,7 @@ header .megaMenu li:hover {
   font-family: Tahoma, Arial, sans-serif;
 }
 
-/* line 213, ../sass/meal.scss */
+/* line 181, ../sass/meal.scss */
 .popup .close {
   position: absolute;
   top: 20px;
@@ -278,13 +234,13 @@ header .megaMenu li:hover {
   color: #333;
 }
 
-/* line 223, ../sass/meal.scss */
+/* line 191, ../sass/meal.scss */
 .popup .close:hover {
   color: #06D85F;
 }
 
 /****表單輸入****/
-/* line 228, ../sass/meal.scss */
+/* line 196, ../sass/meal.scss */
 .popup .content {
   text-align: center;
   max-height: 100%;
@@ -292,7 +248,7 @@ header .megaMenu li:hover {
   margin: 0 auto;
   padding-top: 15px;
 }
-/* line 235, ../sass/meal.scss */
+/* line 203, ../sass/meal.scss */
 .popup .content input[type='submit'] {
   opacity: .8;
   width: 100px;
@@ -306,13 +262,13 @@ header .megaMenu li:hover {
   font-weight: 500;
   background-color: #3ac569;
 }
-/* line 250, ../sass/meal.scss */
+/* line 218, ../sass/meal.scss */
 .popup .content .group {
   position: relative;
   margin-top: 20px;
   margin-bottom: 45px;
 }
-/* line 256, ../sass/meal.scss */
+/* line 224, ../sass/meal.scss */
 .popup .content .group .icon {
   color: #1abc9c;
   font-size: 25px;
@@ -320,7 +276,7 @@ header .megaMenu li:hover {
   left: -40px;
   top: 10px;
 }
-/* line 264, ../sass/meal.scss */
+/* line 232, ../sass/meal.scss */
 .popup .content .group input[type='text'] {
   padding: 10px 10px 10px 5px;
   font-size: 18px;
@@ -329,11 +285,11 @@ header .megaMenu li:hover {
   border: none;
   border-bottom: 1px solid #757575;
 }
-/* line 272, ../sass/meal.scss */
+/* line 240, ../sass/meal.scss */
 .popup .content .group input[type='text']:focus {
   outline: none;
 }
-/* line 277, ../sass/meal.scss */
+/* line 245, ../sass/meal.scss */
 .popup .content .group select {
   width: 200px;
   font-size: 18px;
@@ -345,11 +301,11 @@ header .megaMenu li:hover {
   box-shadow: none;
   color: #999;
 }
-/* line 287, ../sass/meal.scss */
+/* line 255, ../sass/meal.scss */
 .popup .content .group select:focus {
   outline: none;
 }
-/* line 292, ../sass/meal.scss */
+/* line 260, ../sass/meal.scss */
 .popup .content .group label {
   color: #999;
   font-size: 18px;
@@ -362,13 +318,13 @@ header .megaMenu li:hover {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 305, ../sass/meal.scss */
+/* line 273, ../sass/meal.scss */
 .popup .content .group input:focus ~ label, .popup .content .group input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #5264AE;
 }
-/* line 310, ../sass/meal.scss */
+/* line 278, ../sass/meal.scss */
 .popup .content .group .bars {
   position: relative;
   background-color: #757575;
@@ -378,14 +334,14 @@ header .megaMenu li:hover {
 }
 
 /****End of Pop up****/
-/* line 327, ../sass/meal.scss */
+/* line 295, ../sass/meal.scss */
 .main-header,
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/* line 332, ../sass/meal.scss */
+/* line 300, ../sass/meal.scss */
 .main-header {
   background: steelblue;
   color: #FFF;
@@ -395,7 +351,7 @@ header .megaMenu li:hover {
 }
 
 /****Layout****/
-/* line 344, ../sass/meal.scss */
+/* line 312, ../sass/meal.scss */
 .item-view {
   width: 100%;
   opacity: .8;
@@ -405,12 +361,12 @@ header .megaMenu li:hover {
   background-color: #fff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-/* line 353, ../sass/meal.scss */
+/* line 321, ../sass/meal.scss */
 .item-view .title {
   padding: 10px 0 10px 0;
   background-color: #51e980;
 }
-/* line 356, ../sass/meal.scss */
+/* line 324, ../sass/meal.scss */
 .item-view .title h1 {
   font-weight: 100;
   padding-left: 20px;
@@ -418,17 +374,17 @@ header .megaMenu li:hover {
   font-size: 25px;
   text-align: left;
 }
-/* line 364, ../sass/meal.scss */
+/* line 332, ../sass/meal.scss */
 .item-view .button-box {
   padding-top: 10px;
   margin-left: 20px;
   text-align: left;
 }
-/* line 369, ../sass/meal.scss */
+/* line 337, ../sass/meal.scss */
 .item-view .table-box {
   margin-top: 20px;
 }
-/* line 372, ../sass/meal.scss */
+/* line 340, ../sass/meal.scss */
 .item-view .table-box .table-wrap {
   padding: 5px 0 5px 0;
   border: 1px solid;
@@ -436,7 +392,7 @@ header .megaMenu li:hover {
   margin: 0 auto;
 }
 
-/* line 383, ../sass/meal.scss */
+/* line 351, ../sass/meal.scss */
 .select-style {
   padding: 0;
   margin: 0;
@@ -448,7 +404,7 @@ header .megaMenu li:hover {
   background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
 }
 
-/* line 395, ../sass/meal.scss */
+/* line 363, ../sass/meal.scss */
 .select-style select {
   padding: 5px 8px;
   width: 130%;
@@ -461,7 +417,7 @@ header .megaMenu li:hover {
   appearance: none;
 }
 
-/* line 407, ../sass/meal.scss */
+/* line 375, ../sass/meal.scss */
 .select-style select:focus {
   outline: none;
 }

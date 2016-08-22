@@ -14,26 +14,18 @@
 	<body>
 
 <!-- Navbar -->
-		
-			<header>
-		<nav>
-			<button id="togg_menu">
-			<span class="bars"></span>
-			<span class="bars"></span>
-			<span class="bars"></span>
-			</button>
-
-			<ul class="megaMenu">
-
-				<li class="title"><h1>Menu</h1></li>
+		<header class="main-header">
+			<!-- <h1>點餐系統</h1> -->
+			<span>點餐系統</span>
+			<ul>
 				<li class="stuff"><a href="../order.html">點餐</a></li>
 				<li class="stuff"><a href="meals">新增餐點</a></li>
 				<li class="stuff"><a href="heads">新增類別</a></li>
-				<li class="stuff"><a href="accounting.html">營收</a></li>
+				<li class="stuff"><a href="day_accounting.html">日營收</a></li>
+				<li class="stuff"><a href="month_accounting.html">月營收</a></li>
 			</ul>
-		</nav>
-		
 	</header>
+
 <!-- End of Navbar-->
 
 
