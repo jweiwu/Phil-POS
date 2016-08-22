@@ -172,14 +172,16 @@ $(document).ready(function(){
 		this.itemIdNum = Num;
 		for(i = 1; i<=itemIdNum ;i++){
 
-			if (orderList[i].mid == null){
+			if (orderList[i].mid === null){
 				continue;
-			}
+			} 
+			else {
 			v = i -1
 			orderList[i].name = "orderList["+v+"].mid";
 			orderList[i].name2 = "orderList["+v+"].quantity";
 			var html = template2(orderList[i]);
 			$("#export").append(html);
+		    }
 		}
 	}
 
